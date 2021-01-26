@@ -9,9 +9,49 @@
     <title>Film Review</title>
 </head>
 <body>
+    <header>
+        
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo">Film Review</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Films</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Add Film</a></li>
+                    <li><a href="#">Review Film</a></li>
+                    <li><a href="#">Register</a></li>
+                    <li><a href="#">Log In</a></li>
+                    <li><a href="#">Log Out</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Films</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Add Film</a></li>
+            <li><a href="#">Review Film</a></li>
+            <li><a href="#">Register</a></li>
+            <li><a href="#">Log In</a></li>
+            <li><a href="#">Log Out</a></li>
+        </ul>
+        
+    </header>
 
     {% block content %}
     {% endblock %}
+
+    <footer>
+        <div class="footer-copyright page-footer">
+            <div class="container">
+                <span>Created by James Stephens</span>
+                <a class="grey-text text-lighten-4 right" href="#!">Github Link</a>
+            </div>
+        </div>
+    </footer>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
