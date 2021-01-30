@@ -1,5 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-    <h2 class="center-align page-title">Film Review</h2>
-
+    <div class="page-title">    
+        <h2 class="center-align">Film Review</h2>
+    </div>
+    <div class="row">
+        <form action="#" method="POST" class="col s12">
+            <div class="row valign-wrapper center-align">
+                <div class="input-field col s12">
+                    <input type="text" name="search" id="search" minlength="2" placeholder="Search Films" class="validate" required>
+                    <button type="submit" class="prefix search-btn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
 {% endblock %}
