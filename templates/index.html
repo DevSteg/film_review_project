@@ -24,7 +24,12 @@
 
         <!-- Top Films -->
         <div class="top-films">
-
+            {% for film in films %}
+                {{ film.film_title }}<br>
+                {{ film.genre }}<br>
+                {{ film.desc }}<br>
+                {{ film.release_date }}
+            {% endfor %}
         </div>
         <!-- Cta Buttons -->
         <div class="valign-wrapper col s12">
