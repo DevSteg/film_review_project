@@ -21,16 +21,28 @@
                 <a href="#" class="waves-effect waves-light btn cta-btn hoverable">Log in</a>
             </div>
         </div>
-
+        
         <!-- Top Films -->
-        <div class="top-films">
-            {% for film in films %}
-                {{ film.film_title }}<br>
-                {{ film.genre }}<br>
-                {{ film.desc }}<br>
-                {{ film.release_date }}
-            {% endfor %}
-        </div>
+            <div class="top-films row">
+                {% for film in films %}
+                    <div class="col s12 m6 l4">
+                        <div class="card medium">
+                            <div class="card-image">
+                                <img src="{{ film.film_img }}" alt="Film Image" class="film-img">
+                            </div>
+                            <div class="card-content center-align">
+                                <h5 class="film-title">{{ film.film_title.capitalize() }}</h5>
+                                <p class="film-genre">Genre: {{ film.genre.capitalize() }}</p>
+                                <p class="film-date">Release date: {{ film.release_date }}</p>
+                            </div>
+                            <div class="card-action center-align">
+                                <a href="#">This is a link</a>
+                                <a href="#">This is a link</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         <!-- Cta Buttons -->
         <div class="valign-wrapper col s12">
             <div class="center-align col s12">
