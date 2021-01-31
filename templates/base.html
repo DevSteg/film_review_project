@@ -12,7 +12,7 @@
 <body>
     <header>
         
-        <nav>
+        <nav class="transparent">
             <div class="nav-wrapper">
                 <a href="#!" class="brand-logo">Film Review</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
@@ -40,6 +40,10 @@
             <li><a href="#">Log Out</a></li>
         </ul>
         
+        <h2 class="page-title center-align">
+            {% block title %}
+            {% endblock %}
+        </h2>
     </header>
 
     <main class="container">
