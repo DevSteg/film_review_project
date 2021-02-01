@@ -23,6 +23,10 @@ def index():
     return render_template("index.html", films=films)
 
 
+@app.route("/register.html")
+def register():
+    return render_template("register.html")
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=os.environ.get("PORT"),
