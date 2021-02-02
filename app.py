@@ -1,7 +1,7 @@
 import os
 from flask import (
     Flask, render_template, url_for,
-    flash, request)
+    flash, redirect, request, session)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import (
@@ -27,6 +27,28 @@ def index():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    if request.method == "POST":
+
+        existing_user = mongo.db.users.find_one({
+            "username": request.form.get("username").lower()
+        })
+
+        if existing_user:
+            flash("User already exists")
+            return redirect(url_for("register"))
+
+        register_user = {
+            "username": request.form.get("username").lower(),
+            "email": request.form.get("email").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+
+        mongo.db.users.insert_one(register_user)
+
+        session["user"] = request.form.get("username").lower()
+        flash("Registration Successful")
+        return redirect(url_for("profile", username=session["user"]))
+
     return render_template("register.html")
 
 
