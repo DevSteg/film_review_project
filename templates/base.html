@@ -14,15 +14,15 @@
         
         <nav class="transparent">
             <div class="nav-wrapper">
-                <a href="{{ url_for('index')}}" class="brand-logo left">Film Review</a>
+                <a href="{{ url_for('index') }}" class="brand-logo left">Film Review</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('index')}}">Home</a></li>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
                     <li><a href="#">Films</a></li>
-                    <li><a href="#">Profile</a></li>
+                    <li><a href="{{ url_for('profile') }}">Profile</a></li>
                     <li><a href="#">Add Film</a></li>
                     <li><a href="#">Review Film</a></li>
-                    <li><a href="{{url_for('register')}}">Register</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
                     <li><a href="#">Log In</a></li>
                     <li><a href="#">Log Out</a></li>
                 </ul>
