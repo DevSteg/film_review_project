@@ -53,8 +53,13 @@ def register():
     return render_template("register.html")
 
 
-@app.route("/profile/<username>")
-def profile(username):
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    return render_template("login.html")
+
+
+@app.route("/profile")
+def profile():
     return render_template("profile.html")
 
 
