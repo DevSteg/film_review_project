@@ -1,14 +1,32 @@
 {% extends "base.html" %}
 <!-- Page Title -->
 {% block title %}
-    <span>Profile</span>
+    <span>{{ username.capitalize() }}'s Profile</span>
 {% endblock %}
 {% block content %}
     <div class="row">
-        <div class="col s6 offset-m2">
-            <div class="card-panel">
-
-            </div>
+        <div class="col s6 offset-m3">
+            <form action="#" method="POST" class="col s12">
+                <div class="card-panel">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" id="username" name="username" value="{{ username.capitalize() }}" required>
+                            <label for="username">Username</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="email" id="email" name="email" value="{{ email }}" required>
+                            <label for="email">Email address</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s6 offset-m4">
+                            <button type="submit" class="waves-effect waves-light btn-large hoverable">Update profile</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 {% endblock %}
