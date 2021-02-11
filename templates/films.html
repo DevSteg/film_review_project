@@ -4,5 +4,34 @@
     <span>Films</span>
 {% endblock %}
 {% block content %}
-    
+    <div class="row">
+        <form action="#" method="POST" class="col s12">
+            <div class="row valign-wrapper center-align">
+                <div class="input-field col s12">
+                    <input type="text" name="search" id="search" minlength="2" placeholder="Search Films" class="validate" required>
+                    <button type="submit" class="prefix search-btn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </form>
+        
+        <div class="top-films row">
+            {% for film in films %}
+                <div class="col s12 m6 l4">
+                    <div class="card medium">
+                        <div class="card-image">
+                            <img src="{{ film.film_img }}" alt="Film Image" class="film-img">
+                        </div>
+                        <div class="card-content center-align">
+                            <h5 class="film-title">{{ film.film_title.capitalize() }}</h5>
+                            <p class="film-genre">Genre: {{ film.genre.capitalize() }}</p>
+                            <p class="film-date">Release date: {{ film.release_date }}</p>
+                        </div>
+                        <div class="card-action center-align">
+                            <a href="#">Add review</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

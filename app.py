@@ -27,7 +27,8 @@ def index():
 
 @app.route("/films")
 def films():
-    return render_template("films.html")
+    films = mongo.db.films.find()
+    return render_template("films.html", films=films)
 
 
 @app.route("/register", methods=["GET", "POST"])
