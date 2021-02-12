@@ -31,6 +31,13 @@ def films():
     return render_template("films.html", films=films)
 
 
+@app.route("/films/<film_title>")
+def movie(film_title):
+    movie = mongo.db.films.find_one(
+        {"film_title": film_title})
+    return render_template("movie.html", movie=movie)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
