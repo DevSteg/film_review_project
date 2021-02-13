@@ -1,8 +1,24 @@
 {% extends "base.html" %}
 <!-- Page Title -->
 {% block title %}
-    <span>{{ movie.film_title.capitalize() }}</span>
+    <span>{{ movie.film_title.title() }}</span>
 {% endblock %}
 {% block content %}
-
+    <div class="row">
+        <!-- Movie Card -->
+        <div class="col s12 m8 offset-m2">
+            <div class="card horizontal">
+                <div class="card-image">
+                    <img src="{{ movie.film_img }}" alt="Cover image for {{ movie.film_title.capitalize() }}">
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content center-align">
+                        <p><span>Release Date:</span> {{ movie.release_date }}</p>
+                        <p><span>Description:</span> {{ movie.desc.capitalize() }}</p>
+                        <p><span>Genre:</span> {{ movie.genre.capitalize() }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
