@@ -38,6 +38,11 @@ def movie(film_title):
     return render_template("movie.html", movie=movie)
 
 
+@app.route("/add_film", methods=["GET", "POST"])
+def add_film():
+    return render_template("add_film.html")
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
