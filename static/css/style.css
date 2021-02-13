@@ -1,3 +1,4 @@
+/* Base.html Styles */
 body{
     position: relative;
     height: 100vh;
@@ -15,6 +16,9 @@ header{
     background-color: rgba(48, 45, 45, 0.603);
 }
 
+/* /Base.html Styles */
+
+/* Search bar */
 #search{
     width: 50%;
 }
@@ -23,13 +27,29 @@ header{
     background: none;
     border: none;
 }
+/* /Search Bar */
 
+/* Buttons */
+.cta-btn {
+    margin: 15px;
+    border-radius: 30px;
+}
+/* /Buttons */
+
+/* Film Card */
 .film-img{
     height: 200px;
     object-fit: contain;
 }
 
-.cta-btn {
-    margin: 15px;
-    border-radius: 30px;
+/* Film-info */
+.info-tag{
+    font-weight: 700;
+    font-size: 1.2rem;
 }
+
+.card .card-content .film-info{
+    margin: 25px;
+}
+/* /Film-info */
+/* /Film Cards */
