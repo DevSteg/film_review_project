@@ -4,5 +4,43 @@
     <span>Add Film</span>
 {% endblock %}
 {% block content %}
-    
+    <div class="row">
+        <form action="#" method="POST" class="col s6 m8 offset-m2">
+            <div class="card-panel">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="url" id="film_img" name="film_img" placeholder="" required>
+                        <label for="film_img">Film Cover Image URL:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" id="film_title" name="film_title" placeholder="" required>
+                        <label for="film_title">Title:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" id="genre" name="genre" placeholder="" required>
+                        <label for="genre">Genre:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" class="datepicker" id="release_date" name="release_date" placeholder="" required>
+                        <label for="release_date">Release Date:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <label for="desc">Film Description:</label>
+                        <textarea type="text" id="desc" name="desc" placeholder="" row="6" cols="12" required></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="submit" class="btn-large col s12">Add Film</button>
+                </div>
+            </div>
+        </form>
+    </div>
 {% endblock %}
