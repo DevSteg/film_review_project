@@ -40,6 +40,33 @@ def movie(film_title):
 
 @app.route("/add_film", methods=["GET", "POST"])
 def add_film():
+    if request.method == "POST":
+        # Check if film already exists
+        existing_film = mongo.db.films.find_one({
+            "film_title": request.form.get("film_title").lower(),
+            "release_date": request.form.get("release_date")
+        })
+
+        # If film exists redirect to the films page
+        if existing_film:
+            flash("Film already exists!")
+            return redirect(url_for(
+                "movie", film_title=existing_film["film_title"]))
+
+        # If the film does not exist in the db
+        new_film = {
+            "film_img": request.form.get("film_img"),
+            "film_title": request.form.get("film_title").lower(),
+            "genre": request.form.get("genre").lower(),
+            "release_date": request.form.get("release_date"),
+            "desc": request.form.get("desc").lower(),
+            "created_by": session["user"]
+        }
+
+        mongo.db.films.insert_one(new_film)
+        flash("Film successfully added!")
+        return redirect(url_for("movie", film_title=new_film["film_title"]))
+
     return render_template("add_film.html")
 
 
@@ -66,6 +93,8 @@ def register():
 
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful")
+        return redirect(url_for(
+                        "profile", username=session["user"]))
 
     return render_template("register.html")
 
