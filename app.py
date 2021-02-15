@@ -70,6 +70,11 @@ def add_film():
     return render_template("add_film.html")
 
 
+@app.route("/review", methods=["GET", "POST"])
+def review():
+    return render_template("review.html")
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
