@@ -70,9 +70,15 @@ def add_film():
     return render_template("add_film.html")
 
 
-@app.route("/review", methods=["GET", "POST"])
-def review():
-    return render_template("review.html")
+@app.route("/review/<film_title>", methods=["GET", "POST"])
+def review(film_title):
+    film = mongo.db.films.find_one(
+        {"film_title": film_title})
+
+    film_img = mongo.db.films.find_one({
+        "film_title": film_title})["film_img"]
+
+    return render_template("review.html", film=film, film_img=film_img)
 
 
 @app.route("/register", methods=["GET", "POST"])

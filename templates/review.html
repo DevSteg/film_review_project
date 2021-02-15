@@ -4,4 +4,23 @@
     <span>Add Review</span>
 {% endblock %}
 {% block content %}
+    <div class="row">
+        <div class="card horizontal col s6 m8 offset-m2">
+            <div class="card-image col s8">
+                <img src="{{ film_img }}" alt="">
+            </div>
+            <div class="card-content col s6">
+                <h3>{{ film.film_title.title() }}</h3>
+                <form action="#" method="POST">
+                    <div class="row">
+                        <label for="review">Add Review</label>
+                        <textarea type="text" id="review" name="review" rows="4" cols="12" required></textarea>
+                    </div>
+                    <div class="row">
+                        <button type="submit" class="btn-large col s12">Add Review</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 {% endblock %}
