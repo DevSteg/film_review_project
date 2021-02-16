@@ -72,13 +72,29 @@ def add_film():
 
 @app.route("/review/<film_title>", methods=["GET", "POST"])
 def review(film_title):
-    film = mongo.db.films.find_one(
-        {"film_title": film_title})
 
-    film_img = mongo.db.films.find_one({
-        "film_title": film_title})["film_img"]
+    if session:
+        film = mongo.db.films.find_one(
+            {"film_title": film_title})
 
-    return render_template("review.html", film=film, film_img=film_img)
+        film_img = mongo.db.films.find_one({
+            "film_title": film_title})["film_img"]
+
+        if request.method == "POST":
+            review = {
+                "film_title": film_title,
+                "review": request.form.get("review"),
+                "created_by": session["user"]
+            }
+
+            mongo.db.reviews.insert_one(review)
+            flash("Review Added")
+            return redirect(url_for("movie", film_title=film_title))
+
+        return render_template("review.html", film=film, film_img=film_img)
+
+    flash("You must login/Register to leave a review")
+    return redirect(url_for("login"))
 
 
 @app.route("/register", methods=["GET", "POST"])
