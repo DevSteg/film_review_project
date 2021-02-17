@@ -21,18 +21,21 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/index")
 def index():
+    # Render the index page using the films collection from the db
     films = mongo.db.films.find()
     return render_template("index.html", films=films)
 
 
 @app.route("/films")
 def films():
+    # Render the films page using the films collection from the db
     films = mongo.db.films.find()
     return render_template("films.html", films=films)
 
 
 @app.route("/films/<film_id>")
 def movie(film_id):
+    # Render the single movie page using the films object id
     movie = mongo.db.films.find_one(
         {"_id": ObjectId(film_id)})
     return render_template("movie.html", movie=movie)
@@ -40,6 +43,7 @@ def movie(film_id):
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    # Search Films
     query = request.form.get("search")
     films = mongo.db.films.find({"$text": {"$search": query}})
     return render_template("films.html", films=films)
@@ -79,12 +83,14 @@ def add_film():
 
 @app.route("/review/<film_id>", methods=["GET", "POST"])
 def review(film_id):
-
+    # If user is logged in
     if session:
+        # find film using the films object id
         film = mongo.db.films.find_one(
             {"_id": ObjectId(film_id)})
 
         if request.method == "POST":
+            # Add a new review
             review = {
                 "film_id": film["_id"],
                 "film_title": film["film_title"],
@@ -98,6 +104,7 @@ def review(film_id):
 
         return render_template("review.html", film=film)
 
+    # If not logged in
     flash("You must login/Register to leave a review")
     return redirect(url_for("login"))
 
@@ -105,7 +112,7 @@ def review(film_id):
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        # first check is username exists
+        # first check if username exists
         existing_user = mongo.db.users.find_one({
             "username": request.form.get("username").lower()
         })
@@ -148,12 +155,12 @@ def login():
                         "profile", username=session["user"]))
 
             else:
-                # Incorrect Password
+                # Incorrect Password/username
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
 
         else:
-            # Incorrect Username
+            # Incorrect Password/username
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
@@ -162,16 +169,18 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
+    # Get username using the session username
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-
+    # Get email using the session username
     email = mongo.db.users.find_one(
         {"username": session["user"]})["email"]
-
+    # Get object id using the session username
     user_id = mongo.db.users.find_one(
         {"username": session["user"]})["_id"]
 
     if session["user"]:
+        # Update user profile
         if request.method == "POST":
             update = {
                 "username": request.form.get("username"),
