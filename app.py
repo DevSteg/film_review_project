@@ -168,7 +168,22 @@ def profile(username):
     email = mongo.db.users.find_one(
         {"username": session["user"]})["email"]
 
+    user_id = mongo.db.users.find_one(
+        {"username": session["user"]})["_id"]
+
     if session["user"]:
+        if request.method == "POST":
+            update = {
+                "username": request.form.get("username"),
+                "email": request.form.get("email"),
+                "password": generate_password_hash(
+                    request.form.get("password"))
+            }
+
+            mongo.db.users.update({"_id": ObjectId(user_id)}, update)
+            flash("Profile Successfully Updated")
+            return redirect(url_for("logout"))
+
         return render_template(
             "profile.html", username=username, email=email)
 
