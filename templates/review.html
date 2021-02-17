@@ -7,10 +7,10 @@
     <div class="row">
         <div class="card horizontal col s6 m8 offset-m2">
             <div class="card-image col s8">
-                <img src="{{ film_img }}" alt="Cover image for {{ film.capitalize() }}">
+                <img src="{{ film.film_img }}" alt="Cover image for {{ film.film_title.capitalize() }}">
             </div>
             <div class="card-content col s6">
-                <h3>{{ film.title() }}</h3>
+                <h3>{{ film.film_title.title() }}</h3>
                 <form action="#" method="POST">
                     <div class="row">
                         <label for="review">Add Review</label>

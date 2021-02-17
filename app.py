@@ -82,14 +82,12 @@ def review(film_id):
 
     if session:
         film = mongo.db.films.find_one(
-            {"_id": ObjectId(film_id)})["film_title"]
-
-        film_img = mongo.db.films.find_one({
-            "_id": ObjectId(film_id)})["film_img"]
+            {"_id": ObjectId(film_id)})
 
         if request.method == "POST":
             review = {
-                "film_title": film,
+                "film_id": film["_id"],
+                "film_title": film["film_title"],
                 "review": request.form.get("review"),
                 "created_by": session["user"]
             }
@@ -98,7 +96,7 @@ def review(film_id):
             flash("Review Added")
             return redirect(url_for("movie", film_id=film["_id"]))
 
-        return render_template("review.html", film=film, film_img=film_img)
+        return render_template("review.html", film=film)
 
     flash("You must login/Register to leave a review")
     return redirect(url_for("login"))
