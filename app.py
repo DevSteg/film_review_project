@@ -38,6 +38,13 @@ def movie(film_title):
     return render_template("movie.html", movie=movie)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("search")
+    films = mongo.db.films.find({"$text": {"$search": query}})
+    return render_template("films.html", films=films)
+
+
 @app.route("/add_film", methods=["GET", "POST"])
 def add_film():
     if request.method == "POST":
