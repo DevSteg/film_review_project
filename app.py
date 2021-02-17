@@ -31,10 +31,10 @@ def films():
     return render_template("films.html", films=films)
 
 
-@app.route("/films/<film_title>")
-def movie(film_title):
+@app.route("/films/<film_id>")
+def movie(film_id):
     movie = mongo.db.films.find_one(
-        {"film_title": film_title})
+        {"_id": ObjectId(film_id)})
     return render_template("movie.html", movie=movie)
 
 
@@ -58,7 +58,7 @@ def add_film():
         if existing_film:
             flash("Film already exists!")
             return redirect(url_for(
-                "movie", film_title=existing_film["film_title"]))
+                "movie", film_id=existing_film["_id"]))
 
         # If the film does not exist in the db
         new_film = {
@@ -72,31 +72,31 @@ def add_film():
 
         mongo.db.films.insert_one(new_film)
         flash("Film successfully added!")
-        return redirect(url_for("movie", film_title=new_film["film_title"]))
+        return redirect(url_for("movie", film_id=new_film["_id"]))
 
     return render_template("add_film.html")
 
 
-@app.route("/review/<film_title>", methods=["GET", "POST"])
-def review(film_title):
+@app.route("/review/<film_id>", methods=["GET", "POST"])
+def review(film_id):
 
     if session:
         film = mongo.db.films.find_one(
-            {"film_title": film_title})
+            {"_id": ObjectId(film_id)})["film_title"]
 
         film_img = mongo.db.films.find_one({
-            "film_title": film_title})["film_img"]
+            "_id": ObjectId(film_id)})["film_img"]
 
         if request.method == "POST":
             review = {
-                "film_title": film_title,
+                "film_title": film,
                 "review": request.form.get("review"),
                 "created_by": session["user"]
             }
 
             mongo.db.reviews.insert_one(review)
             flash("Review Added")
-            return redirect(url_for("movie", film_title=film_title))
+            return redirect(url_for("movie", film_id=film["_id"]))
 
         return render_template("review.html", film=film, film_img=film_img)
 
