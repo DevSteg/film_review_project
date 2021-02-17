@@ -81,6 +81,27 @@ def add_film():
     return render_template("add_film.html")
 
 
+@app.route("/edit_film/<film_id>", methods=["GET", "POST"])
+def edit_film(film_id):
+    films = mongo.db.films.find_one(
+        {"_id": ObjectId(film_id)})
+
+    if request.method == "POST":
+        edit = {
+            "film_img": request.form.get("film_img"),
+            "film_title": request.form.get("film_title"),
+            "genre": request.form.get("genre"),
+            "release_date": request.form.get("release_date"),
+            "desc": request.form.get("desc")
+        }
+
+        mongo.db.films.update({"_id": ObjectId(film_id)}, edit)
+        flash("Film Successfully Updated")
+        return redirect(url_for("movie", film_id=films["_id"]))
+
+    return render_template("edit_film.html", film_id=film_id, films=films)
+
+
 @app.route("/review/<film_id>", methods=["GET", "POST"])
 def review(film_id):
     # If user is logged in

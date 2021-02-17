@@ -17,6 +17,9 @@
                         <p class="film-info"><span class="info-tag">Description:</span><br> {{ movie.desc.capitalize() }}</p>
                         <p class="film-info"><span class="info-tag">Genre:</span><br> {{ movie.genre.capitalize() }}</p>
                     </div>
+                    <div class="row">
+                        <a href="/edit_film/{{ movie._id }}" class="btn-large col s12">Edit Film</a>
+                    </div>
                 </div>
             </div>
         </div>
