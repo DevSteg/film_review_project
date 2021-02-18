@@ -9,7 +9,7 @@
         <div class="col s12 m8 offset-m2">
             <div class="card horizontal">
                 <div class="card-image">
-                    <img src="{{ movie.film_img }}" alt="Cover image for {{ movie.film_title.capitalize() }}">
+                    <img src="{{ movie.film_img }}" alt="Cover image for {{ movie.film_title.capitalize() }}" class="film_cover">
                 </div>
                 <div class="card-stacked">
                     <div class="card-content center-align">
@@ -17,9 +17,14 @@
                         <p class="film-info"><span class="info-tag">Description:</span><br> {{ movie.desc.capitalize() }}</p>
                         <p class="film-info"><span class="info-tag">Genre:</span><br> {{ movie.genre.capitalize() }}</p>
                     </div>
-                    <div class="row">
-                        <a href="/edit_film/{{ movie._id }}" class="btn-large col s12">Edit Film</a>
-                    </div>
+                    {% if session %}
+                        {% if session.user.lower() == movie.created_by.lower() %}
+                            <div class="row">
+                                <a href="/edit_film/{{ movie._id }}" class="btn-large col s6 offset-s3">Edit Film</a>
+                            </div>
+                            <a href="/delete_film/{{ movie._id }}" class="delete-btn">Delete Film</a>
+                        {% endif %}
+                    {% endif %}
                 </div>
             </div>
         </div>

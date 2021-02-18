@@ -102,6 +102,13 @@ def edit_film(film_id):
     return render_template("edit_film.html", film_id=film_id, films=films)
 
 
+@app.route("/delete_film/<film_id>")
+def delete_film(film_id):
+    mongo.db.films.remove({"_id": ObjectId(film_id)})
+    flash("Film Successfully Deleted")
+    return redirect(url_for("films"))
+
+
 @app.route("/review/<film_id>", methods=["GET", "POST"])
 def review(film_id):
     # If user is logged in
