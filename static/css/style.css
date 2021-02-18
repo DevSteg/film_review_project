@@ -27,6 +27,11 @@ header{
     background: none;
     border: none;
 }
+
+.reset-btn{
+    margin-left: 50px;
+    color: red;
+}
 /* /Search Bar */
 
 /* Buttons */
