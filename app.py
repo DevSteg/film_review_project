@@ -92,7 +92,8 @@ def edit_film(film_id):
             "film_title": request.form.get("film_title"),
             "genre": request.form.get("genre"),
             "release_date": request.form.get("release_date"),
-            "desc": request.form.get("desc")
+            "desc": request.form.get("desc"),
+            "created_by": session["user"]
         }
 
         mongo.db.films.update({"_id": ObjectId(film_id)}, edit)

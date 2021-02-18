@@ -5,7 +5,7 @@
 {% endblock %}
 {% block content %}
     <div class="row">
-        <form action="{{ url_for('edit_film', film_id='{{ films._id }}') }}" method="POST" class="col s6 m8 offset-m2">
+        <form action="{{ url_for('edit_film', film_id=films._id) }}" method="POST" class="col s6 m8 offset-m2">
             <div class="card-panel">
                 <div class="row">
                     <div class="input-field col s12">
