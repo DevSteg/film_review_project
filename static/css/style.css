@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Barlow:wght@300;400;500&display=swap');
+
 /* Base.html Styles */
 body{
     position: relative;
     height: 100vh;
+    font-family: 'Barlow', sans-serif;
 }
 
 header{
@@ -10,6 +13,12 @@ header{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.page-title{
+    font-family: 'Bangers', cursive;
+    font-size: 6rem;
+    letter-spacing: 8px;
 }
 
 .page-footer{
@@ -48,6 +57,7 @@ header{
 }
 
 /* Film-info */
+
 .info-tag{
     font-weight: 700;
     font-size: 1.2rem;
