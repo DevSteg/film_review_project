@@ -162,7 +162,7 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful")
         return redirect(url_for(
-                        "profile", username=session["user"]))
+                        "profile", user=session["user"]))
 
     return render_template("register.html")
 
@@ -181,7 +181,7 @@ def login():
                     session["user"] = request.form.get("username").lower()
                     flash("Login Successful")
                     return redirect(url_for(
-                        "profile", username=session["user"]))
+                        "profile", user=session["user"]))
 
             else:
                 # Incorrect Password/username
@@ -196,36 +196,38 @@ def login():
     return render_template("login.html")
 
 
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
+@app.route("/profile/<user>", methods=["GET", "POST"])
+def profile(user):
     # Get username using the session username
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-    # Get email using the session username
-    email = mongo.db.users.find_one(
-        {"username": session["user"]})["email"]
-    # Get object id using the session username
-    user_id = mongo.db.users.find_one(
-        {"username": session["user"]})["_id"]
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
 
     if session["user"]:
         # Update user profile
         if request.method == "POST":
             update = {
-                "username": request.form.get("username"),
-                "email": request.form.get("email"),
+                "username": request.form.get("username").lower(),
+                "email": request.form.get("email").lower(),
                 "password": generate_password_hash(
                     request.form.get("password"))
             }
 
-            mongo.db.users.update({"_id": ObjectId(user_id)}, update)
+            mongo.db.users.update({"_id": ObjectId(user["_id"])}, update)
             flash("Profile Successfully Updated")
             return redirect(url_for("logout"))
 
         return render_template(
-            "profile.html", username=username, email=email)
+            "profile.html", user=user)
 
     return redirect(url_for("login"))
+
+
+@app.route("/delete_acc/<user_id>")
+def delete_acc(user_id):
+    mongo.db.users.remove({"_id": ObjectId(user_id)})
+    session.pop("user")
+    flash("Profile Deleted")
+    return redirect(url_for("index"))
 
 
 @app.route("/logout")
