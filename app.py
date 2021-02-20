@@ -51,6 +51,7 @@ def search():
 
 @app.route("/add_film", methods=["GET", "POST"])
 def add_film():
+    # Create New Film
     if request.method == "POST":
         # Check if film already exists
         existing_film = mongo.db.films.find_one({
@@ -83,10 +84,13 @@ def add_film():
 
 @app.route("/edit_film/<film_id>", methods=["GET", "POST"])
 def edit_film(film_id):
+    # Edit Film
+    # Find film in db using Object Id
     films = mongo.db.films.find_one(
         {"_id": ObjectId(film_id)})
 
     if request.method == "POST":
+        # Create edit dict using the edit film form
         edit = {
             "film_img": request.form.get("film_img"),
             "film_title": request.form.get("film_title"),
@@ -95,7 +99,7 @@ def edit_film(film_id):
             "desc": request.form.get("desc"),
             "created_by": session["user"]
         }
-
+        # Update the db using the new edit dict
         mongo.db.films.update({"_id": ObjectId(film_id)}, edit)
         flash("Film Successfully Updated")
         return redirect(url_for("movie", film_id=films["_id"]))
@@ -105,6 +109,7 @@ def edit_film(film_id):
 
 @app.route("/delete_film/<film_id>")
 def delete_film(film_id):
+    # Delete Film
     mongo.db.films.remove({"_id": ObjectId(film_id)})
     flash("Film Successfully Deleted")
     return redirect(url_for("films"))
@@ -112,6 +117,7 @@ def delete_film(film_id):
 
 @app.route("/review/<film_id>", methods=["GET", "POST"])
 def review(film_id):
+    # Add Review
     # If user is logged in
     if session:
         # find film using the films object id
@@ -140,6 +146,7 @@ def review(film_id):
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    # Register User
     if request.method == "POST":
         # first check if username exists
         existing_user = mongo.db.users.find_one({
@@ -169,6 +176,7 @@ def register():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    # User Login
     if request.method == "POST":
         # Check if username exists
         existing_user = mongo.db.users.find_one(
@@ -224,6 +232,7 @@ def profile(user):
 
 @app.route("/delete_acc/<user_id>")
 def delete_acc(user_id):
+    # Delete Users Account
     mongo.db.users.remove({"_id": ObjectId(user_id)})
     session.pop("user")
     flash("Profile Deleted")
@@ -232,6 +241,7 @@ def delete_acc(user_id):
 
 @app.route("/logout")
 def logout():
+    # Logout
     flash("You have been successfully logged out!")
     session.pop("user")
     return redirect(url_for("login"))
