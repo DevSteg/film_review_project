@@ -4,6 +4,7 @@
 body{
     position: relative;
     height: 100vh;
+    background-color: #fdf7fa;
     font-family: 'Barlow', sans-serif;
 }
 
@@ -15,10 +16,25 @@ header{
     background-size: cover;
 }
 
+nav .brand-logo{
+    font-family: 'Bangers', cursive;
+    letter-spacing: 2px;
+    color: #fe5f55;
+}
+
+nav ul a{
+    font-weight: 500;
+}
+
+nav ul a:hover{
+    color: #fe5f55;
+}
+
 .page-title{
     font-family: 'Bangers', cursive;
     font-size: 6rem;
     letter-spacing: 8px;
+    color: #fdf7fa;
 }
 
 .page-footer{
@@ -51,9 +67,32 @@ header{
 /* /Buttons */
 
 /* Film Card */
+
 .film-img{
     height: 200px;
     object-fit: contain;
+}
+
+.card a{
+    color: black;
+}
+
+.card a h5{
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 2rem;
+}
+
+.card, .card .card-action:last-child{
+    border-radius: 30px;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating){
+    font-family: 'Bangers', cursive;
+    font-size: 1.4rem;
+    letter-spacing: 4px;
+    color: #fe5f55;
+    margin-right: 0;
 }
 
 /* Film-info */
