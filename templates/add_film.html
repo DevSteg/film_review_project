@@ -5,7 +5,7 @@
 {% endblock %}
 {% block content %}
     <div class="row">
-        <form action="#" method="POST" class="col s6 m8 offset-m2">
+        <form action="{{ url_for('add_film') }}" method="POST" class="col s12 m8 offset-m2">
             <div class="card-panel">
                 <div class="row">
                     <div class="input-field col s12">
@@ -38,7 +38,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <button type="submit" class="btn-large col s12">Add Film</button>
+                    <button type="submit" class="btn-large col s12 hoverable submit-btn">Add Film <i class="fas fa-edit"></i></button>
                 </div>
             </div>
         </form>

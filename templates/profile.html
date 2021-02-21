@@ -5,7 +5,7 @@
 {% endblock %}
 {% block content %}
     <div class="row">
-        <div class="col s6 offset-m3">
+        <div class="col s12 m8 offset-m2">
             <form action="#" method="POST" class="col s12">
                 <div class="card-panel">
                     <div class="row">
@@ -27,11 +27,9 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col s6 offset-m4">
-                            <button type="submit" class="waves-effect waves-light btn-large hoverable">Update profile</button>
-                        </div>
+                            <button type="submit" class="btn-large hoverable submit-btn col s12">Update profile <i class="fas fa-user-edit"></i></button>
                     </div>
-                    <a href="/delete_acc/{{ user._id }}" class="delete-btn">Delete Account</a>
+                    <a href="/delete_acc/{{ user._id }}" class="delete-btn">Delete Account </a>
                 </div>
             </form>
         </div>
