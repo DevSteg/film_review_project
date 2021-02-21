@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 <!-- Page title -->
 {% block title %}
-    <span>Register</span>
+    <span>Sign Up</span>
 {% endblock %}
 {% block content %}
     <div class="row">
-        <form action="#" method="POST" class="col s6 m8 offset-m2">
+        <form action="{{ url_for('register') }}" method="POST" class="col s12 m8 offset-m2">
             <div class="card-panel">
                 <div class="row">
                     <div class="input-field col s12">
@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <button type="submit" class="btn-large col s12">Register</button>
+                    <button type="submit" class="btn-large col s12 reg-login-btn hoverable">Sign Up <i class="fas fa-user-plus"></i></button>
                 </div>
             </div>
         </form>

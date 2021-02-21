@@ -64,6 +64,22 @@ nav ul a:hover{
     margin: 15px;
     border-radius: 30px;
 }
+
+.reg-login-btn{
+    background-color: #fe5f55;
+    font-weight: 700;
+    font-size: 1.6rem;
+    letter-spacing: 1.5px;
+}
+
+.reg-login-btn:hover{
+    background-color: hsla(4, 99%, 66%, 0.63);
+}
+
+.reg-login-btn i{
+    margin-left: 10px;
+}
+
 /* /Buttons */
 
 /* Film Card */
