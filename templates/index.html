@@ -37,9 +37,9 @@
                                         <h5 class="film-title">{{ film.film_title.title() }}</h5>
                                     </div>
                                 </a>
-                                <div class="card-action center-align">
-                                    <a href="/review/{{ film._id }}">Add Review</a>
-                                </div>
+                                <a href="/review/{{ film._id }}" class="card-action center-align hoverable">
+                                    Add Review
+                                </a>
                             </div>
                         </div>
                     {% endif %}

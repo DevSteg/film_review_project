@@ -87,7 +87,7 @@ nav ul a:hover{
     border-radius: 30px;
 }
 
-.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating){
+.card .card-action {
     font-family: 'Bangers', cursive;
     font-size: 1.4rem;
     letter-spacing: 4px;
