@@ -88,9 +88,13 @@ nav ul a:hover{
 
 /* Film Card */
 
-.film-img{
+.film-img-sm{
     height: 200px;
     object-fit: contain;
+}
+
+.film-img-lrg{
+    height: 500px;
 }
 
 .card a{
@@ -105,6 +109,7 @@ nav ul a:hover{
 
 .card, .card .card-action:last-child{
     border-radius: 30px;
+    background-color: #fdf7fa;
 }
 
 .card .card-action {

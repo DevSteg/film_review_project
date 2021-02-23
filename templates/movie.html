@@ -4,13 +4,14 @@
     <span>{{ movie.film_title.title() }}</span>
 {% endblock %}
 {% block content %}
-    <div class="row">
+    <div class="row valign-wrapper">
+        <!-- Film Cover Image -->
+        <div class="film-cover-div">
+            <img src="{{ movie.film_img }}" alt="Cover image for {{ movie.film_title.capitalize() }}" class="film-img-lrg">
+        </div>
         <!-- Movie Card -->
-        <div class="col s12 m8 offset-m2">
+        <div class="col s12">
             <div class="card horizontal">
-                <div class="card-image">
-                    <img src="{{ movie.film_img }}" alt="Cover image for {{ movie.film_title.capitalize() }}" class="film_cover">
-                </div>
                 <div class="card-stacked">
                     <div class="card-content center-align">
                         <p class="film-info"><span class="info-tag">Release Date:</span><br> {{ movie.release_date }}</p>
