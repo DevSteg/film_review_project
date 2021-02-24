@@ -38,7 +38,10 @@ def movie(film_id):
     # Render the single movie page using the films object id
     movie = mongo.db.films.find_one(
         {"_id": ObjectId(film_id)})
-    return render_template("movie.html", movie=movie)
+    # Find Reviews related to the current film
+    reviews = mongo.db.reviews.find(
+        {"film_id": ObjectId(film_id)})
+    return render_template("movie.html", movie=movie, reviews=reviews)
 
 
 @app.route("/search", methods=["GET", "POST"])

@@ -132,3 +132,12 @@ nav ul a:hover{
 }
 /* /Film-info */
 /* /Film Cards */
+/* Reviews */
+.review-title{
+    font-family: 'Bangers', cursive;
+}
+
+.review-main{
+    font-size: 1.6rem;
+}
+/* /Reviews */

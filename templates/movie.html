@@ -5,7 +5,7 @@
 {% endblock %}
 {% block content %}
     <div class="row valign-wrapper">
-        <!-- Film Cover Image -->
+        <!-- Film Cover Image  -->
         <div class="film-cover-div">
             <img src="{{ movie.film_img }}" alt="Cover image for {{ movie.film_title.capitalize() }}" class="film-img-lrg">
         </div>
@@ -26,6 +26,32 @@
                             <a href="/delete_film/{{ movie._id }}" class="delete-btn">Delete Film</a>
                         {% endif %}
                     {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <div class="card horizontal">
+                <div class="card-stacked">
+                    <div class="card-content center-align">
+                        <h3 class="review-title">Listen To The People!</h3>
+                        <div class="row">
+                            {% for review in reviews %}
+                                <div class="col s12 m6 review-block">
+                                    <p class="review-main">{{ review.review.capitalize() }}</p>
+                                    <p class="review-user">- {{ review.created_by.capitalize() }}</p>
+                                </div>
+                            {% else %}
+                                <div class="col s12">
+                                    <h3>No Reviews yet, Click Add Review To Be The First</h3>
+                                    <a href="/review/{{ movie._id }}" class="btn-large submit-btn center-align hoverable">
+                                    Add Review
+                                    </a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
