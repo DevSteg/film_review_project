@@ -17,14 +17,23 @@
                         <h3 class="movie-card-title">Film Info</h3>
                     </div>
                     <div class="card-content center-align film-info-block">
-                        <p class="film-info"><span class="info-tag">Description:</span><br> {{ movie.desc.capitalize() }}</p>
-                        <p class="film-info"><span class="info-tag">Release Date:</span><br> {{ movie.release_date }}</p>
-                        <p class="film-info"><span class="info-tag">Genre:</span><br> {{ movie.genre.capitalize() }}</p>
+                        <div class="film-desc">
+                            <h5 class="info-tag">Description:</h5> 
+                            <p class="film-info">{{ movie.desc.capitalize() }}</p>
+                        </div>
+                        <div class="film-date">
+                            <h5 class="info-tag">Release Date:</h5>
+                            <p class="film-info">{{ movie.release_date }}</p>
+                        </div>
+                        <div class="film-genre">
+                            <h5 class="info-tag">Genre:</h5>
+                            <p class="film-info">{{ movie.genre.capitalize() }}</p>
+                        </div>
                     </div>
                     {% if session %}
-                    {% if session.user.lower() == movie.created_by.lower() %}
+                        {% if session.user.lower() == movie.created_by.lower() %}
                             <div class="row">
-                                <a href="/edit_film/{{ movie._id }}" class="btn-large col s6 offset-s2 submit-btn hoverable">Edit Film</a>
+                                <a href="/edit_film/{{ movie._id }}" class="btn-large col s12 m4 offset-m4 submit-btn hoverable">Edit Film</a>
                             </div>
                             <a href="/delete_film/{{ movie._id }}" class="delete-btn">Delete Film</a>
                         {% endif %}
@@ -48,9 +57,9 @@
                             {% else %}
                                 <div class="col s12">
                                     <h3 class="review-alert">No Reviews yet, Click Add Review To Be The First</h3>
-                                    <a href="/review/{{ movie._id }}" class="btn-large submit-btn center-align hoverable">Add Review</a>
                                 </div>
                             {% endfor %}
+                            <a href="/review/{{ movie._id }}" class="btn-large submit-btn center-align hoverable">Add Review</a>
                         </div>
                     </div>
                 </div>
