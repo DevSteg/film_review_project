@@ -41,8 +41,12 @@ nav ul a:hover{
     color: #fdf7fa;
 }
 
+.container{
+    margin-top: 3%;
+}
+
 .page-footer{
-    background-color: rgba(48, 45, 45, 0.603);
+    background-color: rgba(48, 45, 45, 0.664);
 }
 
 /* /Base.html Styles */
@@ -74,6 +78,7 @@ nav ul a:hover{
     font-weight: 700;
     font-size: 1.6rem;
     letter-spacing: 1.5px;
+    color: #fdf7fa;
 }
 
 .submit-btn:hover{
@@ -97,11 +102,8 @@ nav ul a:hover{
     height: 500px;
 }
 
-.card a{
-    color: black;
-}
-
 .card a h5{
+    color: black;
     font-weight: 700;
     letter-spacing: 2px;
     font-size: 2rem;
@@ -124,20 +126,29 @@ nav ul a:hover{
 
 .info-tag{
     font-weight: 700;
-    font-size: 1.2rem;
+    color: #fe5f55;
+    letter-spacing: 1px;
 }
 
 .card .card-content .film-info{
-    margin: 25px;
+    margin-bottom: 25px;
 }
 /* /Film-info */
 /* /Film Cards */
 /* Reviews */
-.review-title{
+
+.movie-card-title{
+    color: #fe5f55;
     font-family: 'Bangers', cursive;
+    margin-top: 25px;
+    letter-spacing: 1.3px;
 }
 
 .review-main{
     font-size: 1.6rem;
+}
+
+.review-alert{
+    margin: 50px 0;
 }
 /* /Reviews */
