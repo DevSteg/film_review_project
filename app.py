@@ -54,35 +54,40 @@ def search():
 
 @app.route("/add_film", methods=["GET", "POST"])
 def add_film():
-    # Create New Film
-    if request.method == "POST":
-        # Check if film already exists
-        existing_film = mongo.db.films.find_one({
-            "film_title": request.form.get("film_title").lower(),
-            "release_date": request.form.get("release_date")
-        })
+    # Check if the user is logged in
+    if session:
+        # Create New Film
+        if request.method == "POST":
+            # Check if film already exists
+            existing_film = mongo.db.films.find_one({
+                "film_title": request.form.get("film_title").lower(),
+                "release_date": request.form.get("release_date")
+            })
 
-        # If film exists redirect to the films page
-        if existing_film:
-            flash("Film already exists!")
-            return redirect(url_for(
-                "movie", film_id=existing_film["_id"]))
+            # If film exists redirect to the films page
+            if existing_film:
+                flash("Film already exists!")
+                return redirect(url_for(
+                    "movie", film_id=existing_film["_id"]))
 
-        # If the film does not exist in the db
-        new_film = {
-            "film_img": request.form.get("film_img"),
-            "film_title": request.form.get("film_title").lower(),
-            "genre": request.form.get("genre").lower(),
-            "release_date": request.form.get("release_date"),
-            "desc": request.form.get("desc").lower(),
-            "created_by": session["user"]
-        }
+            # If the film does not exist in the db
+            new_film = {
+                "film_img": request.form.get("film_img"),
+                "film_title": request.form.get("film_title").lower(),
+                "genre": request.form.get("genre").lower(),
+                "release_date": request.form.get("release_date"),
+                "desc": request.form.get("desc").lower(),
+                "created_by": session["user"]
+            }
 
-        mongo.db.films.insert_one(new_film)
-        flash("Film successfully added!")
-        return redirect(url_for("movie", film_id=new_film["_id"]))
+            mongo.db.films.insert_one(new_film)
+            flash("Film successfully added!")
+            return redirect(url_for("movie", film_id=new_film["_id"]))
 
-    return render_template("add_film.html")
+        return render_template("add_film.html")
+    # if not logged in redirect to login/register
+    flash("Please Login/Register to Add a Film")
+    return redirect(url_for("login"))
 
 
 @app.route("/edit_film/<film_id>", methods=["GET", "POST"])
@@ -143,7 +148,7 @@ def review(film_id):
         return render_template("review.html", film=film)
 
     # If not logged in
-    flash("You must login/Register to leave a review")
+    flash("Please login/Register to leave a review")
     return redirect(url_for("login"))
 
 
