@@ -18,8 +18,8 @@
         <!-- Top cta buttons -->
         <div class="valign-wrapper col s12">
             <div class="center-align col s12">
-                <a href="{{url_for('register')}}" class="waves-effect waves-light btn cta-btn hoverable">Regsiter</a>
-                <a href="#" class="waves-effect waves-light btn cta-btn hoverable">Log in</a>
+                <a href="{{ url_for('register') }}" class="btn-large submit-btn hoverable cta-btn">Register</a>
+                <a href="{{ url_for('login') }}" class="btn-large submit-btn hoverable cta-btn">Log in</a>
             </div>
         </div>
         
@@ -48,9 +48,8 @@
         <!-- Cta Buttons -->
         <div class="valign-wrapper col s12">
             <div class="center-align col s12">
-                <a href="#" class="waves-effect waves-light btn cta-btn hoverable">All Films</a>
-                <a href="#" class="waves-effect waves-light btn cta-btn hoverable">Add Film</a>
-                <a href="#" class="waves-effect waves-light btn cta-btn hoverable">Add Review</a>
+                <a href="{{ url_for('films') }}" class="btn-large submit-btn hoverable cta-btn">All Films</a>
+                <a href="{{ url_for('add_film') }}" class="btn-large submit-btn hoverable cta-btn">Add Film</a>
             </div>
         </div>
     </div>
