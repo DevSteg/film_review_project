@@ -32,6 +32,11 @@
                         </a>
                     </div>
                 </div>
+                {% else %}
+                    <div class="col s12 center-align">
+                        <h2 class="center-align">No film found, Please click Add Film below to add it</h2>
+                        <a href="{{ url_for('add_film') }}" class="btn-large submit-btn hoverable">Add Film</a>
+                    </div>
             {% endfor %}
         </div>
     </div>
