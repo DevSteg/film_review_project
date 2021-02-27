@@ -11,7 +11,7 @@
             </div>
             <div class="card-content col s6">
                 <h3>{{ film.film_title.title() }}</h3>
-                <form action="#" method="POST">
+                <form action="{{ url_for('review', film_id=film._id) }}" method="POST">
                     <div class="row">
                         <label for="review">Add Review</label>
                         <textarea type="text" id="review" name="review" rows="4" cols="12" required></textarea>

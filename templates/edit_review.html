@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+<!-- Page Title -->
+{% block title %}
+    <span>Edit Review</span>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="card horizontal col s12 m8 offset-m2">
+            <div class="card-image col s8">
+                <img src="{{ film.film_img }}" alt="Cover image for {{ film.film_title.capitalize() }}">
+            </div>
+            <div class="card-content col s12">
+                <h3>{{ film.film_title.title() }}</h3>
+                <form action="/edit_review/{{ review._id }}" method="POST">
+                    <div class="row">
+                        <label for="edit_review">Edit Review</label>
+                        <textarea type="text" id="edit_review" name="edit_review" rows="10" cols="12" required>{{ review.review.capitalize() }}</textarea>
+                    </div>
+                    <div class="row">
+                        <button type="submit" class="btn-large col s12 submit-btn hoverable">Update Review <i class="fas fa-edit"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

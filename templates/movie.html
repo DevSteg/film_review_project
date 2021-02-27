@@ -53,13 +53,18 @@
                                 <div class="col s12 m6 review-block">
                                     <p class="review-main">{{ review.review.capitalize() }}</p>
                                     <p class="review-user">- {{ review.created_by.capitalize() }}</p>
+                                    {% if session.user == review.created_by %}
+                                    <a href="/edit_review/{{ review._id }}">Edit</a>
+                                    {% endif %}
                                 </div>
                             {% else %}
                                 <div class="col s12">
                                     <h3 class="review-alert">No Reviews yet, Click Add Review To Be The First</h3>
                                 </div>
                             {% endfor %}
-                            <a href="/review/{{ movie._id }}" class="btn-large submit-btn center-align hoverable">Add Review</a>
+                            <div class="row col s12">
+                                <a href="/review/{{ movie._id }}" class="btn-large submit-btn center-align hoverable">Add Review</a>
+                            </div>
                         </div>
                     </div>
                 </div>
