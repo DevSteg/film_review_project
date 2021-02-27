@@ -101,10 +101,10 @@ def edit_film(film_id):
         # Create edit dict using the edit film form
         edit = {
             "film_img": request.form.get("film_img"),
-            "film_title": request.form.get("film_title"),
-            "genre": request.form.get("genre"),
+            "film_title": request.form.get("film_title").lower(),
+            "genre": request.form.get("genre").lower(),
             "release_date": request.form.get("release_date"),
-            "desc": request.form.get("desc"),
+            "desc": request.form.get("desc").lower(),
             "created_by": session["user"]
         }
         # Update the db using the new edit dict
@@ -137,7 +137,7 @@ def review(film_id):
             review = {
                 "film_id": film["_id"],
                 "film_title": film["film_title"],
-                "review": request.form.get("review"),
+                "review": request.form.get("review").lower(),
                 "created_by": session["user"]
             }
 
@@ -150,6 +150,29 @@ def review(film_id):
     # If not logged in
     flash("Please login/Register to leave a review")
     return redirect(url_for("login"))
+
+
+@app.route("/edit_review/<review_id>", methods=["GET", "POST"])
+def edit_review(review_id):
+    review = mongo.db.reviews.find_one(
+        {"_id": ObjectId(review_id)})
+
+    film = mongo.db.films.find_one(
+        {"_id": ObjectId(review["film_id"])})
+
+    if request.method == "POST":
+        edit_review = {
+            "film_id": review["film_id"],
+            "film_title": review["film_title"],
+            "review": request.form.get("edit_review").lower(),
+            "created_by": session["user"]
+        }
+
+        mongo.db.reviews.update({"_id": ObjectId(review_id)}, edit_review)
+        flash("Review Successfully Updated!")
+        return redirect(url_for("movie", film_id=review["film_id"]))
+
+    return render_template("edit_review.html", review=review, film=film)
 
 
 @app.route("/register", methods=["GET", "POST"])
