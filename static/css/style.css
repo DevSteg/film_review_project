@@ -163,4 +163,18 @@ nav ul a:hover{
 .review-alert{
     margin: 50px 0;
 }
+
+.cont-align{
+    height: 450px;
+    margin-top: 7%;
+}
+
+.review-content{
+    height: 400px;
+}
+
+textarea{
+    resize: none;
+    height: 150px;
+}
 /* /Reviews */

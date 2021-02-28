@@ -5,16 +5,16 @@
 {% endblock %}
 {% block content %}
     <div class="row">
-        <div class="card horizontal col s6 m8 offset-m2">
-            <div class="card-image col s8">
-                <img src="{{ film.film_img }}" alt="Cover image for {{ film.film_title.capitalize() }}">
-            </div>
-            <div class="card-content col s6">
-                <h3>{{ film.film_title.title() }}</h3>
-                <form action="{{ url_for('review', film_id=film._id) }}" method="POST">
+        <div class="col s12 l6">
+            <img src="{{ film.film_img }}" class="film-img-lrg" alt="Cover image for {{ film.film_title.capitalize() }}">
+        </div>
+        <div class="card col s12 l6 cont-align">
+            <div class="card-content col s12">
+                <h3 class="center-align review-title">{{ film.film_title.title() }}</h3>
+                <form action="{{ url_for('review', film_id=film._id) }}" method="POST" class="review-content">
                     <div class="row">
                         <label for="review">Add Review</label>
-                        <textarea type="text" id="review" name="review" rows="4" cols="12" required></textarea>
+                        <textarea type="text" id="review" name="review" required></textarea>
                     </div>
                     <div class="row">
                         <button type="submit" class="btn-large col s12 submit-btn hoverable">Add Review <i class="fas fa-plus-square"></i></button>
