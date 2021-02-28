@@ -152,6 +152,14 @@ def review(film_id):
     return redirect(url_for("login"))
 
 
+@app.route("/delete_review/<review_id>")
+def delete_review(review_id):
+    # Delete Review
+    mongo.db.reviews.remove({"_id": ObjectId(review_id)})
+    flash("Review Successfully Deleted")
+    return redirect(url_for("films"))
+
+
 @app.route("/edit_review/<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
     review = mongo.db.reviews.find_one(

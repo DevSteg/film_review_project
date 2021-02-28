@@ -35,7 +35,7 @@
                             <div class="row">
                                 <a href="/edit_film/{{ movie._id }}" class="btn-large col s12 m4 offset-m4 submit-btn hoverable">Edit Film</a>
                             </div>
-                            <a href="/delete_film/{{ movie._id }}" class="delete-btn">Delete Film</a>
+                            <a href="/delete_film/{{ movie._id }}" class="delete-btn"><i class="fas fa-trash-alt"></i></a>
                         {% endif %}
                     {% endif %}
                 </div>
@@ -54,7 +54,8 @@
                                     <p class="review-main">{{ review.review.capitalize() }}</p>
                                     <p class="review-user">- {{ review.created_by.capitalize() }}</p>
                                     {% if session.user == review.created_by %}
-                                    <a href="/edit_review/{{ review._id }}">Edit</a>
+                                    <a href="/edit_review/{{ review._id }}"><i class="fas fa-edit"></i></a>
+                                    <a href="/delete_review/{{ review._id }}" class="delete-btn"><i class="fas fa-trash-alt"></i></a>
                                     {% endif %}
                                 </div>
                             {% else %}
