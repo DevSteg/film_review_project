@@ -4,19 +4,17 @@
     <span>{{ movie.film_title.title() }}</span>
 {% endblock %}
 {% block content %}
-    <div class="row valign-wrapper">
+    <div class="row">
         <!-- Film Cover Image  -->
-        <div class="film-cover-div">
+        <div class="film-cover-div col s12 l5">
             <img src="{{ movie.film_img }}" alt="Cover image for {{ movie.film_title.capitalize() }}" class="film-img-lrg">
         </div>
         <!-- Movie Card -->
-        <div class="col s12">
-            <div class="card horizontal">
+        <div class="col s12 l7">
+            <div class="card movie-card">
                 <div class="card-stacked">
-                    <div class="center-align">
-                        <h3 class="movie-card-title">Film Info</h3>
-                    </div>
                     <div class="card-content center-align film-info-block">
+                        <h3 class="movie-card-title center-align">Film Info</h3>
                         <div class="film-desc">
                             <h5 class="info-tag">Description:</h5> 
                             <p class="film-info">{{ movie.desc.capitalize() }}</p>
@@ -54,8 +52,8 @@
                                     <p class="review-main">{{ review.review.capitalize() }}</p>
                                     <p class="review-user">- {{ review.created_by.capitalize() }}</p>
                                     {% if session.user == review.created_by %}
-                                    <a href="/edit_review/{{ review._id }}"><i class="fas fa-edit"></i></a>
-                                    <a href="/delete_review/{{ review._id }}" class="delete-btn"><i class="fas fa-trash-alt"></i></a>
+                                        <a href="/edit_review/{{ review._id }}"><i class="fas fa-edit"></i></a>
+                                        <a href="/delete_review/{{ review._id }}" class="delete-btn"><i class="fas fa-trash-alt"></i></a>
                                     {% endif %}
                                 </div>
                             {% else %}

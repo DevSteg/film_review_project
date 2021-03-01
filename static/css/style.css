@@ -109,7 +109,11 @@ nav ul a:hover{
 }
 
 .film-img-lrg{
-    height: 600px;
+    height: 575px;
+}
+
+.movie-card{
+    margin-top: 7%;
 }
 
 .card a h5{
@@ -152,7 +156,7 @@ nav ul a:hover{
 .movie-card-title{
     color: #fe5f55;
     font-family: 'Bangers', cursive;
-    margin-top: 25px;
+    margin-top: 20px;
     letter-spacing: 1.3px;
 }
 
