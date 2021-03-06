@@ -21,8 +21,8 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/index")
 def index():
-    # Render the index page using the films collection from the db
-    films = mongo.db.films.find()
+    # Render the index page using 3 random films selected from the db
+    films = mongo.db.films.aggregate([{"$sample": {"size": 3}}])
     return render_template("index.html", films=films)
 
 

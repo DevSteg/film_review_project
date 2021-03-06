@@ -26,23 +26,21 @@
         <!-- Top Films -->
             <div class="top-films row">
                 {% for film in films %}
-                    {% if loop.index <= 3 %}
-                        <div class="col s12 m6 l4">
-                            <div class="card medium hoverable">
-                                <a href="/films/{{ film._id }}">
-                                    <div class="card-image">
-                                        <img src="{{ film.film_img }}"alt="Film Image" class="film-img-sm">
-                                    </div>
-                                    <div class="card-content center-align">
-                                        <h5 class="film-title">{{ film.film_title.title() }}</h5>
-                                    </div>
-                                </a>
-                                <a href="/review/{{ film._id }}" class="card-action center-align hoverable">
+                    <div class="col s12 m6 l4">
+                        <div class="card medium hoverable">
+                            <a href="/films/{{ film._id }}">
+                                <div class="card-image">
+                                    <img src="{{ film.film_img }}"alt="Film Image" class="film-img-sm">
+                                </div>
+                                <div class="card-content center-align">
+                                    <h5 class="film-title">{{ film.film_title.title() }}</h5>
+                                </div>
+                            </a>
+                            <a href="/review/{{ film._id }}" class="card-action center-align hoverable">
                                     Add Review
-                                </a>
-                            </div>
+                            </a>
                         </div>
-                    {% endif %}
+                    </div>
                 {% endfor %}
             </div>
         <!-- Cta Buttons -->
