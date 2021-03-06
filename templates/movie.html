@@ -8,6 +8,9 @@
         <!-- Film Cover Image  -->
         <div class="film-cover-div col s12 l5">
             <img src="{{ movie.film_img }}" alt="Cover image for {{ movie.film_title.capitalize() }}" class="film-img-lrg">
+            <div class="row">
+                <a href="https://www.amazon.co.uk/s?k={{ movie.film_title.lower() }}" class="watch-btn right col s12 center-align" target="_blank"><i class="fas fa-film"></i> Watch Now! <i class="fas fa-film"></i></a>
+            </div>
         </div>
         <!-- Movie Card -->
         <div class="col s12 l7">
@@ -28,6 +31,7 @@
                             <p class="film-info">{{ movie.genre.capitalize() }}</p>
                         </div>
                     </div>
+                    
                     {% if session %}
                         {% if session.user.lower() == movie.created_by.lower() %}
                             <div class="row">

@@ -99,6 +99,14 @@ nav ul a:hover{
     font-weight: 500;
 }
 
+.watch-btn{
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-right: 4%;
+    color: #fe5f55;
+}
+
 /* /Buttons */
 
 /* Film Card */
@@ -113,7 +121,7 @@ nav ul a:hover{
 }
 
 .movie-card{
-    margin-top: 7%;
+    margin-top: 2%;
 }
 
 .card a h5{
@@ -188,6 +196,10 @@ textarea{
     .film-img-lrg{
         margin-left: 190px;
         height: 400px
+    }
+
+    .watch-btn{
+        margin-right: 0;
     }
 }
 
