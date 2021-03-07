@@ -2,6 +2,7 @@ import os
 from flask import (
     Flask, render_template, url_for,
     flash, redirect, request, session)
+from functools import wraps
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import (
@@ -16,6 +17,19 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
+
+
+# Wrapper learnt using Flask documentation
+# https://flask.palletsprojects.com/en/1.1.x/patterns/viewdecorators/
+def login_required(f):
+    # Login Required Wrapper
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        # Check if a user is logged in before accessing the URL
+        if session.get('user') is None:
+            return redirect('/login')
+        return f(*args, **kwargs)
+    return decorated_function
 
 
 @app.route("/")
@@ -59,6 +73,7 @@ def search():
 
 
 @app.route("/add_film", methods=["GET", "POST"])
+@login_required
 def add_film():
     # Check if the user is logged in
     if session:
@@ -97,6 +112,7 @@ def add_film():
 
 
 @app.route("/edit_film/<film_id>", methods=["GET", "POST"])
+@login_required
 def edit_film(film_id):
     # Edit Film
     # Find film in db using Object Id
@@ -130,6 +146,7 @@ def delete_film(film_id):
 
 
 @app.route("/review/<film_id>", methods=["GET", "POST"])
+@login_required
 def review(film_id):
     # Add Review
     # If user is logged in
@@ -167,6 +184,7 @@ def delete_review(review_id):
 
 
 @app.route("/edit_review/<review_id>", methods=["GET", "POST"])
+@login_required
 def edit_review(review_id):
     review = mongo.db.reviews.find_one(
         {"_id": ObjectId(review_id)})
@@ -250,6 +268,7 @@ def login():
 
 
 @app.route("/profile/<user>", methods=["GET", "POST"])
+@login_required
 def profile(user):
     # Get username using the session username
     user = mongo.db.users.find_one(
