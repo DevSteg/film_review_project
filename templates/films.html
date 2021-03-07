@@ -14,7 +14,9 @@
                 </div>
             </div>
         </form>
-
+        <div class="row">
+            <a href="{{ url_for('random') }}" class="btn-large col s12 m6 offset-m3 random_film-btn submit-btn hoverable">Let us pick your next watch!</a>
+        </div>
         <div class="films row">
             {% for film in films %}
                 <div class="col s12 m6 l4">

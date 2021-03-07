@@ -33,6 +33,12 @@ def films():
     return render_template("films.html", films=films)
 
 
+@app.route("/random")
+def random():
+    films = mongo.db.films.aggregate([{"$sample": {"size": 1}}])
+    return render_template("films.html", films=films)
+
+
 @app.route("/films/<film_id>")
 def movie(film_id):
     # Render the single movie page using the films object id
