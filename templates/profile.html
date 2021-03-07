@@ -11,19 +11,19 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <input type="text" id="username" name="username" value="{{ user.username.capitalize() }}" required>
-                            <label for="username">Username</label>
+                            <label for="username">Username <span class="req-star">*</span></label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
                             <input type="email" id="email" name="email" value="{{ user.email }}" required>
-                            <label for="email">Email address</label>
+                            <label for="email">Email address <span class="req-star">*</span></label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
                             <input type="password" id="password" name="password" value="{{ password }}" required>
-                            <label for="password">New Password</label>
+                            <label for="password">Password <span class="req-star">*</span></label>
                         </div>
                     </div>
                     <div class="row">

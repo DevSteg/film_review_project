@@ -13,7 +13,7 @@
                 <h3 class="center-align review-title">{{ film.film_title.title() }}</h3>
                 <form action="{{ url_for('review', film_id=film._id) }}" method="POST" class="review-content">
                     <div class="row">
-                        <label for="review">Add Review</label>
+                        <label for="review">Add Review <span class="req-star">*</span></label>
                         <textarea type="text" id="review" name="review" required></textarea>
                     </div>
                     <div class="row">

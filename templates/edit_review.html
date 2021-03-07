@@ -13,7 +13,7 @@
                 <h3 class="center-align review-title">{{ film.film_title.title() }}</h3>
                 <form action="/edit_review/{{ review._id }}" method="POST">
                     <div class="row">
-                        <label for="edit_review">Edit Review</label>
+                        <label for="edit_review">Edit Review <span class="req-star">*</span></label>
                         <textarea type="text" id="edit_review" name="edit_review" rows="10" cols="12" required>{{ review.review.capitalize() }}</textarea>
                     </div>
                     <div class="row">

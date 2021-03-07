@@ -49,6 +49,10 @@ nav ul a:hover{
     background-color: rgba(48, 45, 45, 0.664);
 }
 
+.req-star{
+    color: red;
+}
+
 /* /Base.html Styles */
 
 /* Search bar */
