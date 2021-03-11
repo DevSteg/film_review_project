@@ -3,7 +3,7 @@ from flask import (
     Flask, render_template, url_for,
     flash, redirect, request, session)
 from functools import wraps
-from flask_pymongo import PyMongo
+from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId
 from werkzeug.security import (
     generate_password_hash, check_password_hash)
@@ -40,10 +40,20 @@ def index():
     return render_template("index.html", films=films)
 
 
-@app.route("/films")
-def films():
+@app.route("/films/<limit>/<offset>")
+def films(limit, offset):
+
+    offset = int(offset)
+    limit = int(limit)
+
+    starting_id = mongo.db.films.find().sort("_id", pymongo.ASCENDING)
+    last_id = starting_id[offset]["_id"]
+
     # Render the films page using the films collection from the db
-    films = mongo.db.films.find()
+    films = mongo.db.films.find(
+        {"_id": {"$gte": last_id}}).sort(
+            "_id", pymongo.ASCENDING).limit(limit)
+
     return render_template("films.html", films=films)
 
 
@@ -64,12 +74,12 @@ def movie(film_id):
     return render_template("movie.html", movie=movie, reviews=reviews)
 
 
-@app.route("/search", methods=["GET", "POST"])
+@app.route("/search?search=", methods=["GET", "POST"])
 def search():
     # Search Films
     query = request.form.get("search")
     films = mongo.db.films.find({"$text": {"$search": query}})
-    return render_template("films.html", films=films)
+    return render_template("films.html", films=films, query=query)
 
 
 @app.route("/add_film", methods=["GET", "POST"])
