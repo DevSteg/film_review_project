@@ -87,7 +87,7 @@ As a film lover I wanted to create a film review website which is controlled by 
         4. Review
         5. Created_by
 - ### Database Schema Design
-    ![Tables Overview](readme_items/db_schema/db_schema.png)
+    ![Tables Overview](static/readme_items/db_schema/db_schema.png)
 
 ## Wireframes
     Wireframes for the project can be found [here]()
