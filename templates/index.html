@@ -6,7 +6,7 @@
 {% block content %}
     <!-- Search bar -->
     <div class="row">
-        <form action="{{ url_for('search') }}" method="POST" class="col s12">
+        <form action="{{ url_for('search') }}" method="GET" class="col s12">
             <div class="row valign-wrapper center-align">
                 <div class="input-field col s12">
                     <input type="text" name="search" id="search" minlength="2" placeholder="Search Films" class="validate" required>

@@ -74,10 +74,10 @@ def movie(film_id):
     return render_template("movie.html", movie=movie, reviews=reviews)
 
 
-@app.route("/search?search=", methods=["GET", "POST"])
+@app.route("/films", methods=["GET", "POST"])
 def search():
     # Search Films
-    query = request.form.get("search")
+    query = request.args.get("search")
     films = mongo.db.films.find({"$text": {"$search": query}})
     return render_template("films.html", films=films, query=query)
 
