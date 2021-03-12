@@ -16,12 +16,14 @@
             </div>
         </form>
         <!-- Top cta buttons -->
-        <div class="valign-wrapper col s12">
-            <div class="center-align col s12">
-                <a href="{{ url_for('register') }}" class="btn-large submit-btn hoverable cta-btn">Register</a>
-                <a href="{{ url_for('login') }}" class="btn-large submit-btn hoverable cta-btn">Log in</a>
+        {% if not session.user %}
+            <div class="valign-wrapper col s12">
+                <div class="center-align col s12">
+                    <a href="{{ url_for('register') }}" class="btn-large submit-btn hoverable cta-btn">Register</a>
+                    <a href="{{ url_for('login') }}" class="btn-large submit-btn hoverable cta-btn">Log in</a>
+                </div>
             </div>
-        </div>
+        {% endif %}
         
         <!-- Top Films -->
             <div class="top-films row">
