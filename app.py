@@ -40,13 +40,14 @@ def index():
     return render_template("index.html", films=films)
 
 
-@app.route("/films/<limit>/<offset>")
-def films(limit, offset):
-
-    offset = int(offset)
-    limit = int(limit)
+@app.route("/films")
+def films():
 
     starting_id = mongo.db.films.find().sort("_id", pymongo.ASCENDING)
+
+    offset = int(request.args.get("offset", 0))
+    limit = 9
+
     last_id = starting_id[offset]["_id"]
 
     # Render the films page using the films collection from the db
@@ -54,7 +55,16 @@ def films(limit, offset):
         {"_id": {"$gte": last_id}}).sort(
             "_id", pymongo.ASCENDING).limit(limit)
 
-    return render_template("films.html", films=films)
+    prev_page = "/films?limit=" + str(limit) + "&offset=" + str(limit - offset)
+    next_page = "/films?limit=" + str(limit) + "&offset=" + str(limit + offset)
+
+    if offset >= starting_id.count() - 1:
+        next_page = "/films?limit=" + str(
+            limit) + "&offset=" + str(limit - offset)
+
+    return render_template(
+        "films.html", films=films, offset=offset,
+        limit=limit, prev_page=prev_page, next_page=next_page)
 
 
 @app.route("/random")
@@ -271,12 +281,10 @@ def login():
                     session["user"] = request.form.get("username").lower()
                     flash("Login Successful")
                     return redirect(url_for("index"))
-
             else:
                 # Incorrect Password/username
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
-
         else:
             # Incorrect Password/username
             flash("Incorrect Username and/or Password")

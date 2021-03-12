@@ -11,7 +11,7 @@
                 <div class="input-field col s12">
                     <input type="text" name="search" id="search" minlength="2" placeholder="Search Films" class="validate" required>
                     <button type="submit" class="prefix search-btn"><i class="fas fa-search"></i></button>
-                    <a href="{{ url_for('films', limit=9, offset=0) }}" class="reset-btn">Reset</a>
+                    <a href="{{ url_for('films') }}" class="reset-btn">Reset</a>
                 </div>
             </div>
         </form>
@@ -19,7 +19,7 @@
         {% if not session.user %}
             <div class="valign-wrapper col s12">
                 <div class="center-align col s12">
-                    <a href="{{ url_for('register') }}" class="btn-large submit-btn hoverable cta-btn">Register</a>
+                    <a href="{{ url_for('register') }}" class="btn-large submit-btn hoverable cta-btn">Sign Up</a>
                     <a href="{{ url_for('login') }}" class="btn-large submit-btn hoverable cta-btn">Log in</a>
                 </div>
             </div>
@@ -48,7 +48,7 @@
         <!-- Cta Buttons -->
         <div class="valign-wrapper col s12">
             <div class="center-align col s12">
-                <a href="{{ url_for('films', limit=9, offset=0) }}" class="btn-large submit-btn hoverable cta-btn">All Films</a>
+                <a href="{{ url_for('films') }}" class="btn-large submit-btn hoverable cta-btn">All Films</a>
                 <a href="{{ url_for('add_film') }}" class="btn-large submit-btn hoverable cta-btn">Add Film</a>
             </div>
         </div>
