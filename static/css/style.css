@@ -70,7 +70,7 @@ nav ul a:hover{
 }
 /* /Search Bar */
 
-/* Buttons */
+/* Buttons and links */
 .cta-btn {
     margin: 2% 10%;
     border-radius: 30px;
@@ -110,7 +110,18 @@ nav ul a:hover{
     color: #fe5f55;
 }
 
-/* /Buttons */
+.pagination li a{
+    font-family: 'Bangers', cursive;
+    color: #fe5f55;
+    font-size: 2.5rem;
+}
+
+.fa-caret-right:before, .fa-caret-left:before{
+    margin: 0 20px;
+}
+
+
+/* /Buttons and links */
 
 /* Film Card */
 
@@ -230,5 +241,9 @@ textarea{
     .film-img-lrg{
         height: 300px;
         margin-left: 60px;
+    }
+
+    .pagination li a{
+        font-size: 1.8rem;
     }
 }
