@@ -6,13 +6,10 @@
 {% block content %}
     <div class="row">
         <div class="col s12 m8 offset-m2">
-            <form action="#" method="POST" class="col s12">
+            <form action="{{ url_for('profile', user=user._id) }}" method="POST" class="col s12">
                 <div class="card-panel">
                     <div class="row">
-                        <div class="input-field col s12">
-                            <input type="text" id="username" name="username" value="{{ user.username.capitalize() }}" required>
-                            <label for="username">Username <span class="req-star">*</span></label>
-                        </div>
+                        <h3 class="center-align profile-title">Hello {{ user.username.capitalize() }}</h3>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
@@ -22,7 +19,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input type="password" id="password" name="password" value="{{ password }}" required>
+                            <input type="password" id="password" name="password" value="{{ password }}" minlength="5" required>
                             <label for="password">Password <span class="req-star">*</span></label>
                         </div>
                     </div>

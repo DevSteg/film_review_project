@@ -297,7 +297,7 @@ def profile(user):
         # Update user profile
         if request.method == "POST":
             update = {
-                "username": request.form.get("username").lower(),
+                "username": session["user"],
                 "email": request.form.get("email").lower(),
                 "password": generate_password_hash(
                     request.form.get("password"))
@@ -305,7 +305,7 @@ def profile(user):
 
             mongo.db.users.update({"_id": ObjectId(user["_id"])}, update)
             flash("Profile Successfully Updated")
-            return redirect(url_for("logout"))
+            return render_template("profile.html", user=user)
 
         return render_template(
             "profile.html", user=user)

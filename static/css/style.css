@@ -193,6 +193,21 @@ textarea{
     height: 150px;
 }
 /* /Reviews */
+/* Sign Up and Profile */
+
+.profile-title{
+    font-size: 5rem;
+    color: #fe5f55;
+    font-family: 'Bangers', cursive;
+    margin-top: 20px;
+    letter-spacing: 1.3px;
+}
+
+.user-tag{
+    font-size: .8rem;
+    color: red;
+}
+/* /Sign Up and Profile */
 
 /* Media Queries */
 @media only screen and (max-width: 900px){
