@@ -310,7 +310,11 @@ Wireframes for the project can be found [here](static/readme_items/wireframes/fi
     This worked as expected but this was when I realised that using the profile page to change the user username means they could duplicate a username that already exists in the database. 
     * Testing editing the users profile, When the user updates their email and enters their password, the expected outcome is to update the users profile within the DB and then refresh the profile with the updated data in the the fields.
     While testing this I relaised the page does not update straight away and will need the user to refresh the page once more to get updated info. As this is not a major issues I decided to fix this by redirecting the user to the homepage after updating their profile.
-    
+
+- #### Form Testing
+    * All form inputs should be required. 
+    The expected outcome is acheieved the user can not submit a form without data in each input field.
+
 - ### Device/Browser Testing
     + Chrome
     + Firefox
@@ -335,12 +339,19 @@ Wireframes for the project can be found [here](static/readme_items/wireframes/fi
     I have fixed this by removing the option to edit the users username, I chose to fix the bug this way due to time constraints.
     
     #### Redirect register bug
-    While testing the register functionality i realised that the user was return to the wrong page, This was human error and was fixed by updating the redirect in the fuction.
+    While testing the register functionality I realised that the user was return to the wrong page, This was human error and was fixed by updating the redirect in the fuction.
+
+    #### Redirect profile bug
+    While testing the profile functionality I realised that the profile did not update the information on the page straight away, As I don't see this a major bug I have chosen to redirect the user to the homepage for now and to update the bug at a later date.
 
 - ### Known Bugs
+
     #### Flashed messages
     While testing the add film and review buttons, I discovered that the flash message to tell the user they need to login to add film or add review, does not show up. 
     Due to time restraints I was unable to fix this bug at build stage
+
+    #### Redirect profile bug
+    While testing the profile functionality I realised that the profile did not update the information on the page straight away, As I don't see this a major bug I have chosen to redirect the user to the homepage for now and to update the bug at a later date.
 
 ## Deployment
     
