@@ -12,8 +12,6 @@ As a film lover I wanted to create a film review website which is controlled by 
 - ### User Stories 
     * #### First Time Users
         1. As a first time user, I want to understand the purpose of the website.
-            * I am imediately met with a clear to understand design and the title of the website, and three random films with add review button on them. 
-            * The images used on the project also help the user understand what the websites purpose is.
         2. As a first time user, I want to easily navigate around the site.
         3. As a first time user, I want easily find the film I am looking for.
         4. As a first time user, I want to easily create my own account.
@@ -155,25 +153,45 @@ Wireframes for the project can be found [here](static/readme_items/wireframes/fi
 
 - ### Testing User Stories
 
-    * #### First Time Users
-        1. As a first time user, I want to understand the purpose of the website.
-        2. As a first time user, I want to easily navigate around the site.
-        3. As a first time user, I want easily find the film I am looking for.
-        4. As a first time user, I want to easily create my own account.
-        5. As a first time user, I want to find a film to watch quickly.
+* #### First Time Users
+    1. As a first time user, I want to understand the purpose of the website.
+        * I am immediately met with a clear to understand design and the title of the website, and three random films with add review button on them. 
+        * The images used on the project also help the user understand what the websites purpose is.
+    2. As a first time user, I want to easily navigate around the site.
+        * I am immediately met with easy to understand buttons and links to move around the website with ease.
+    3. As a first time user, I want easily find the film I am looking for.
+        * On the home page there is a search bar, where I can search for a film by either the title or the films genre.
+    4. As a first time user, I want to easily create my own account.
+        * I am met with a Sign Up button at the top of the home page, aswell as a link in the nav bar to register an account.
+        * The resgister account page is a simple form, with easy to understand labels for each input.
+    5. As a first time user, I want to find a film to watch quickly.
+        * I can search for a film using the search bar on the home page or films page by searching a films title or genre
+        * When I click the all films button I go through to the films page list, which lists all the films within the database. 
+        At the top of this page is a "Let us choose your next watch" button this button will pul a random film from the DB for me to watch next.
+        
 
     * #### Returning/Frequent Users (Film Fans)
         1. As a frequent user, I want to quickly sign into my own account.
+            * I am immediately met with a login button at the top of the homepage. Which is also available in the navbar.
+            * Once on the login page it is a quick and easy to uderstand process of entering my username and password.
         2. As a frequent user, I want to be able to add/edit my own review on a film of my choice.
+            * Each film has a films card, at the bottom of the film card is n add review button.
+            * Alternatively when on the individual movie page the review button is within the review section.
         3. As a frequent user, I want to be able to add a film, if I can not find it.
+            * There is an add film button on the homepage of the website and within the navbar, once there adding a new film is a simple and easy to understand form.
+            * If searching for a film using the search bar and no film with the name or genre exists in the db. 
+            Then a message asking me if I would like to add the film along with add film button will show up.
         4. As a frequent user, I want to be able to edit or delete a film I have added if required.
+            * If I uploaded the review or the film then a edit button will show up on both the film and the review.
+            * If I uploaded the review or the film then a delete button will show up on both the film and the review.
         5. As a frequent user, I want to be able to view and edit my info to keep it up to date.
+            * Each user has their own profile page where they can updated their email and password, currently Usernames can not be changed due to security.
 
 - ### Edit Profile Testing
     * Testing editting the username. I chanegd the user name only on the profile page and I clicked the update profile button. 
     This worked as expected but this was when I realised that using the profile page to change the user username means they could duplicate a username that already exists in the database. 
 
-* ## Device/Browser Testing
+- ### Device/Browser Testing
     + Chrome
     + Firefox
     + Microsoft Edge
@@ -181,8 +199,10 @@ Wireframes for the project can be found [here](static/readme_items/wireframes/fi
     + Iphone X (Chrome Dev Tools)
     + Ipad Pro (Chrome Dev tools)
     + Samsung Note 20 Ultra 5G
+    + Samsung Galaxy Tab S6 Lite
 
     My partner also tested the full site using Safari on her Macbook pro., and her Iphone.
+
 ## Bugs
 - ### Bugs Fixed
 
