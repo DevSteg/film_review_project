@@ -311,7 +311,7 @@ def profile(user):
 
             mongo.db.users.update({"_id": ObjectId(user["_id"])}, update)
             flash("Profile Successfully Updated")
-            return render_template("profile.html", user=user)
+            return redirect(url_for("index"))
 
         return render_template(
             "profile.html", user=user)

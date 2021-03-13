@@ -292,16 +292,24 @@ Wireframes for the project can be found [here](static/readme_items/wireframes/fi
     The expected outcome is acheived.
     * When editing the review in the text area and clicking edit review the expected outcome is to update the review and then return the user to the movie page with their review on display in the reviews section.
     The expected outcome is acheived.
-    
+
 - #### Login Testing
     * When the user has entered a username and/or password incorrectly and clicked login the expected outcome if to refesh the login page with a message to tell the user that in the information given was incorrect.
     The expected outcome is acheived.
     * When the user has entered a username and/or password correctly and clicked login the expected outcome if to return the user to the homepage of the website and display a successfull logged in message.
     The expected outcome is acheived.
 
+- #### Register Testing
+    * When the user has entered a username that is already taken and clicked register the expected outcome if to refesh the register page with a message to tell the user that in the username already exists.
+    The expected outcome is acheived.
+    * When the user has entered a username, email and password correctly and clicked register the expected outcome if to return the user to the homepage of the website and display a successfully registered message.
+    The expected outcome was not acheived at first as I realised I have the wrong the return url_for for the register function. Once fixed the expected outcome is acheived.
+
 - #### Edit Profile Testing
     * Testing editing the username. I chanegd the user name only on the profile page and I clicked the update profile button. 
     This worked as expected but this was when I realised that using the profile page to change the user username means they could duplicate a username that already exists in the database. 
+    * Testing editing the users profile, When the user updates their email and enters their password, the expected outcome is to update the users profile within the DB and then refresh the profile with the updated data in the the fields.
+    While testing this I relaised the page does not update straight away and will need the user to refresh the page once more to get updated info. As this is not a major issues I decided to fix this by redirecting the user to the homepage after updating their profile.
     
 - ### Device/Browser Testing
     + Chrome
@@ -325,6 +333,9 @@ Wireframes for the project can be found [here](static/readme_items/wireframes/fi
     #### Duplicate Username bug
     While testing editing the user profile, I realised that changing the users username this way means they can duplicate a username that already exists in the database. 
     I have fixed this by removing the option to edit the users username, I chose to fix the bug this way due to time constraints.
+    
+    #### Redirect register bug
+    While testing the register functionality i realised that the user was return to the wrong page, This was human error and was fixed by updating the redirect in the fuction.
 
 - ### Known Bugs
     #### Flashed messages
