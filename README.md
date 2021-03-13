@@ -218,7 +218,7 @@ Wireframes for the project can be found [here](static/readme_items/wireframes/fi
         The expected outcome was acheived.
 
 - #### Search bar Testing
-    * When enter a unknown search term the films page should display a message telling the user no film was found would they like to add it in.
+    * When entering an unknown search term the films page should display a message telling the user no film was found would they like to add it in.
     The expected outcome is acheived.
     * When entering the name of a film or genre, the films page should find all films relating to the search and display them to the user.
     The expected is acheived
@@ -234,32 +234,70 @@ Wireframes for the project can be found [here](static/readme_items/wireframes/fi
         - If a user is logged in take the user to add review page for that specific film. 
         The expected outcome for this is achevied.
         - If a user is not logged in then take the user to the login page to login.
-        The expected outcome is acheieved.
+        The expected outcome is acheived.
     * Testing the All Films button, when clicking the all films button the expected outcome is to take the user to the films page where it lists the films in the database.
     The expected outcome is achevied.
     * Testing the Add Film button, when clicking the add film button it should do one of two things 
         - If a user is logged in take the user to add film page to add a film.
         The expected out for this is achevied.
         - If a user is not logged in then take the user to the login page to login.
-        The expected outcome is acheieved.
+        The expected outcome is acheived.
 
 - #### Films page Testing
     * Testing the "lets us pick your next watch" button, When pressing this button the expected outcome is for the films page to display one randomly selected film form the db.
-    The expected outcome is acheieved.
+    The expected outcome is acheived.
     * Testing the film cards, when clicking the film image the expected outcome is to take the user to that specific movie page for read reviews and find out more information on the film.
     The expected outcome is acheived.
     * Testing the Add Review button in the film card, when clicking the add review button it should do one of two things 
         - If a user is logged in take the user to add review page for that specific film. 
         The expected outcome for this is achevied.
         - If a user is not logged in then take the user to the login page to login.
-        The expected outcome is acheieved.
+        The expected outcome is acheived.
     * Testing the pagination buttons.
         - When clicking the previous page button the expected outcome is for the films page to display the previous set of 9 films on the page.
         The expected outcome for this is acheived.
         - When clicking the next page button the expected outcome is for the films page to display the next set of 9 films on the page.
         The expected outcome for this is acheived.
 
+- #### Movie Page Testing
+    * This page displays as expected.
+    * Testing the Add Review button in the film card, when clicking the add review button it should do one of two things 
+        - If a user is logged in take the user to add review page for that specific film. 
+        The expected outcome for this is achevied.
+        - If a user is not logged in then take the user to the login page to login.
+        The expected outcome is acheived.
+    * When a user is logged in display and added the film to the database, expected outcome is to display the edit film and delete buttons in the film descrption.
+    The expected outcome is acheived.
+    * Testing the edit film button, The expected outcome is top take the user to the edit film page for that specific film.
+    The expected outcome is acheived.
+    * Testing the delete button, The expected outcome is to remove the film from the database and return the user to the films page.
+    The expected outcome is acheived.
+
+- #### Edit Film Testing
+    * when on edit film the expected outcome is to display the information in input boxes on the specific film you want to edit.
+    The expected outcome is acheived.
+    * When editing the film and clicking the eidt film button the expected outcome is to update the film within the database and return the user to the movie page for that specific film.
+    The expected outcome is acheived.
+
+- #### Add Review Testing
+    * When on the page of add review it should display the movie image and title of the specific film the user wants to add a review too.
+    The expected outcome is acheived.
+    * When entering a review into the text area and clicking add review the expected outcome is to add the review and then return the user to the movie page with their review on display in the reviews section.
+    The expected outcome is acheived.
+
+- #### Edit Review testing
+    * When on the page of edit review it should display the movie image and title of the specific film the user wants to edit their review for.
+    The expected outcome is acheived.
+    * When on the page of edit review it should also display the review that the user wants to edit within the textarea.
+    The expected outcome is acheived.
+    * When editing the review in the text area and clicking edit review the expected outcome is to update the review and then return the user to the movie page with their review on display in the reviews section.
+    The expected outcome is acheived.
     
+- #### Login Testing
+    * When the user has entered a username and/or password incorrectly and clicked login the expected outcome if to refesh the login page with a message to tell the user that in the information given was incorrect.
+    The expected outcome is acheived.
+    * When the user has entered a username and/or password correctly and clicked login the expected outcome if to return the user to the homepage of the website and display a successfull logged in message.
+    The expected outcome is acheived.
 
 - #### Edit Profile Testing
     * Testing editing the username. I chanegd the user name only on the profile page and I clicked the update profile button. 
