@@ -32,6 +32,8 @@ def login_required(f):
     return decorated_function
 
 
+# Pagination created with the help from
+# Pretty Printed Youtube video, Link can be found in the README.md
 @app.route("/")
 @app.route("/index")
 def index():
@@ -276,10 +278,10 @@ def login():
         if existing_user:
             # If user exists check the password is correct
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Login Successful")
-                    return redirect(url_for("index"))
+             existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Login Successful")
+                return redirect(url_for("index"))
             else:
                 # Incorrect Password/username
                 flash("Incorrect Username and/or Password")
