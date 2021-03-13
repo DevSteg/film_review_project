@@ -109,9 +109,10 @@ Wireframes for the project can be found [here](static/readme_items/wireframes/fi
 * CRUD on user added reviews, (Reviews can only be edited/deleted by the user that added it).
 
 ## Planned Features
-    * Adding an upload image file feature to add film.
-    * Adding a forum page for users to discuss films directly.
-    * Eventually Add a star rating system.
+
+* Adding an upload image file feature to add film.
+* Adding a forum page for users to discuss films directly.
+* Eventually Add a star rating system.
 
 ## Technologies Used
 
@@ -186,9 +187,30 @@ Wireframes for the project can be found [here](static/readme_items/wireframes/fi
             * If I uploaded the review or the film then a delete button will show up on both the film and the review.
         5. As a frequent user, I want to be able to view and edit my info to keep it up to date.
             * Each user has their own profile page where they can updated their email and password, currently Usernames can not be changed due to security.
+- ### Further Testing
 
-- ### Edit Profile Testing
-    * Testing editting the username. I chanegd the user name only on the profile page and I clicked the update profile button. 
+- #### Home Page Testing
+    * Testing the resgister button, When clicking on the register button its expected outcome is to take the user to the register page to register account.
+    The expected outcome is acheived.
+    * Testing the login button, When clicking on the login button its expected outcome is to take the user to the login page to login.
+    The expected outcome is acheived.
+    * Testing the film cards, when clicking the film image the expected outcome is to take the user to that specific movie page for read reviews and find out more information on the film.
+    The expected outcome is acheived.
+    * Testing the Add Review button in the film card, when clicking the add review button it should do one of two things 
+        - If a user is logged in take the user to add review page for that specific film. 
+        The expected out for this is achevied.
+        - If a user is not logged in then take the user to the login page to login.
+        The expected outcome is acheieved.
+    * Testing the All Films button, when clicking the all films button the expected outcome is to take the user to the films page where it lists the films in the database.
+    The expected outcome is achevied.
+    * Testing the Add Film button, when clicking the add film button it should do one of two things 
+        - If a user is logged in take the user to add film page to add a film.
+        The expected out for this is achevied.
+        - If a user is not logged in then take the user to the login page to login.
+        The expected outcome is acheieved.
+
+- #### Edit Profile Testing
+    * Testing editing the username. I chanegd the user name only on the profile page and I clicked the update profile button. 
     This worked as expected but this was when I realised that using the profile page to change the user username means they could duplicate a username that already exists in the database. 
 
 - ### Device/Browser Testing
