@@ -86,12 +86,13 @@ def movie(film_id):
     return render_template("movie.html", movie=movie, reviews=reviews)
 
 
-@app.route("/films", methods=["GET", "POST"])
+@app.route("/search", methods=["GET", "POST"])
 def search():
     # Search Films
     query = request.args.get("search")
+    print(query)
     films = mongo.db.films.find({"$text": {"$search": query}})
-    return render_template("films.html", films=films, query=query)
+    return render_template("films.html", films=films)
 
 
 @app.route("/add_film", methods=["GET", "POST"])

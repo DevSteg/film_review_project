@@ -101,6 +101,7 @@ Wireframes for the project can be found [here](static/readme_items/wireframes/fi
 * Responsive Design, Available on a range of devices.
     [Materialize](https://materializecss.com/) was used to help with the responsiveness of the site.
 * Interactive Elements.
+* Pagination on films.
 * Register Account.
 * Login to users profile.
 * Random film button to choose a film from the db for the user to watch next.
@@ -228,6 +229,7 @@ Wireframes for the project can be found [here](static/readme_items/wireframes/fi
         The expected outcome was acheived.
 
 - #### Search bar Testing
+    * When testing the search bar, I realised I had created an app routing error in the function, with this fixed the serach bar worked as expected.
     * When entering an unknown search term the films page should display a message telling the user no film was found would they like to add it in.
     The expected outcome is acheived.
     * When entering the name of a film or genre, the films page should find all films relating to the search and display them to the user.
