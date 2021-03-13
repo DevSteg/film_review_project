@@ -12,6 +12,8 @@ As a film lover I wanted to create a film review website which is controlled by 
 - ### User Stories 
     * #### First Time Users
         1. As a first time user, I want to understand the purpose of the website.
+            * I am imediately met with a clear to understand design and the title of the website, and three random films with add review button on them. 
+            * The images used on the project also help the user understand what the websites purpose is.
         2. As a first time user, I want to easily navigate around the site.
         3. As a first time user, I want easily find the film I am looking for.
         4. As a first time user, I want to easily create my own account.
@@ -93,18 +95,20 @@ As a film lover I wanted to create a film review website which is controlled by 
     ![Tables Overview](static/readme_items/db_schema/db_schema.png)
 
 ## Wireframes
-    Wireframes for the project can be found [here](static/readme_items/wireframes/film_review_wireframes.pdf)
+
+Wireframes for the project can be found [here](static/readme_items/wireframes/film_review_wireframes.pdf)
 
 ## Features
-    * Responsive Design, Available on a range of devices.
-        [Materialize](https://materializecss.com/) was used to help with the responsiveness of the site.
-    * Interactive Elements.
-    * Register Account.
-    * Login to users profile.
-    * Random film button to choose a film from the db for the user to watch next.
-    * CRUD on users profile, (Reviews can only be edited/deleted by the user that added it).
-    * CRUD on films added by user, (Films can only be edited/deleted by the user that added it).
-    * CRUD on user added reviews, (Reviews can only be edited/deleted by the user that added it).
+
+* Responsive Design, Available on a range of devices.
+    [Materialize](https://materializecss.com/) was used to help with the responsiveness of the site.
+* Interactive Elements.
+* Register Account.
+* Login to users profile.
+* Random film button to choose a film from the db for the user to watch next.
+* CRUD on users profile, (Reviews can only be edited/deleted by the user that added it).
+* CRUD on films added by user, (Films can only be edited/deleted by the user that added it).
+* CRUD on user added reviews, (Reviews can only be edited/deleted by the user that added it).
 
 ## Planned Features
     * Adding an upload image file feature to add film.
@@ -112,6 +116,7 @@ As a film lover I wanted to create a film review website which is controlled by 
     * Eventually Add a star rating system.
 
 ## Technologies Used
+
 - ### Languages Used
     * [HTML5](https://en.wikipedia.org/wiki/HTML5)
     * [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
@@ -148,10 +153,36 @@ As a film lover I wanted to create a film review website which is controlled by 
 
 ## Testing
 
--### Edit Profile Testing
+- ### Testing User Stories
+
+    * #### First Time Users
+        1. As a first time user, I want to understand the purpose of the website.
+        2. As a first time user, I want to easily navigate around the site.
+        3. As a first time user, I want easily find the film I am looking for.
+        4. As a first time user, I want to easily create my own account.
+        5. As a first time user, I want to find a film to watch quickly.
+
+    * #### Returning/Frequent Users (Film Fans)
+        1. As a frequent user, I want to quickly sign into my own account.
+        2. As a frequent user, I want to be able to add/edit my own review on a film of my choice.
+        3. As a frequent user, I want to be able to add a film, if I can not find it.
+        4. As a frequent user, I want to be able to edit or delete a film I have added if required.
+        5. As a frequent user, I want to be able to view and edit my info to keep it up to date.
+
+- ### Edit Profile Testing
     * Testing editting the username. I chanegd the user name only on the profile page and I clicked the update profile button. 
     This worked as expected but this was when I realised that using the profile page to change the user username means they could duplicate a username that already exists in the database. 
-        
+
+* ## Device/Browser Testing
+    + Chrome
+    + Firefox
+    + Microsoft Edge
+    + Iphone 6/7/8 plus (Chrome Dev tools)
+    + Iphone X (Chrome Dev Tools)
+    + Ipad Pro (Chrome Dev tools)
+    + Samsung Note 20 Ultra 5G
+
+    My partner also tested the full site using Safari on her Macbook pro., and her Iphone.
 ## Bugs
 - ### Bugs Fixed
 
@@ -170,32 +201,32 @@ As a film lover I wanted to create a film review website which is controlled by 
 
 ## Deployment
     
-    ### Remote Deployment
-        * Go to your Github repository and open it using GitPod
-        * Create the requirements.txt file with the dependencies for Heroku in by runnig the command "pip3 freeze --local > requirements.txt" in the gitpod terminal
-        * Create the procfile for Heroku by running the command "echo web: python app.py > Procfile" in the gitpod terrminal
-        * Check the Procfile, and remove any previous blank lines above web: python app.py
-        * Commit and push the requirements.txt and Procfile to Github
-        * Log in to Heroku and select Create New App
-        * Using the App name input field give the project a name that has not been used before
-        * Select the region most suitable to your location
-        * Click Create App
-        * Next connect the app to the Github repository by clicking on the Deployment Method section and then clicking the Github icon
-        * Add your Github profile into the section called connect to Github.
-        * Add you repository into the connect to Github section where your profile is displayed
-        * Click on the Search button, when it finds the correct repository click the Connect button
-        * Click on the settings tab at the top of the page, and select Reveal Config Var
-        * Add the variables for IP, PORT, SECRET_KEY, MONGO_URI and MONGODB_NAME 
-        * Then select Enable Automatic Deployment to make sure the website is always up to date with the Github repository
-        * Select the master branch under Branch Selected
-        * Click on the Deploy Branch and wait for the app to build
-        * Once the app has built, click View to launch the app
+- ### Remote Deployment
+    * Go to your Github repository and open it using GitPod
+    * Create the requirements.txt file with the dependencies for Heroku in by runnig the command "pip3 freeze --local > requirements.txt" in the gitpod terminal
+    * Create the procfile for Heroku by running the command "echo web: python app.py > Procfile" in the gitpod terrminal
+    * Check the Procfile, and remove any previous blank lines above web: python app.py
+    * Commit and push the requirements.txt and Procfile to Github
+    * Log in to Heroku and select Create New App
+    * Using the App name input field give the project a name that has not been used before
+    * Select the region most suitable to your location
+    * Click Create App
+    * Next connect the app to the Github repository by clicking on the Deployment Method section and then clicking the Github icon
+    * Add your Github profile into the section called connect to Github.
+    * Add you repository into the connect to Github section where your profile is displayed
+    * Click on the Search button, when it finds the correct repository click the Connect button
+    * Click on the settings tab at the top of the page, and select Reveal Config Var
+    * Add the variables for IP, PORT, SECRET_KEY, MONGO_URI and MONGODB_NAME 
+    * Then select Enable Automatic Deployment to make sure the website is always up to date with the Github repository
+    * Select the master branch under Branch Selected
+    * Click on the Deploy Branch and wait for the app to build
+    * Once the app has built, click View to launch the app
     
-    ### Forking the GitHub Repository
-        - Fork the project using the following steps
-            * Log in to GitHub and locate the [GitHub Repository](https://github.com/DevSteg/film_review_project)
-            * At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
-            * You should now have a copy of the original repository in your GitHub account.
+- ### Forking the GitHub Repository
+    - Fork the project using the following steps
+        * Log in to GitHub and locate the [GitHub Repository](https://github.com/DevSteg/film_review_project)
+        * At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+        * You should now have a copy of the original repository in your GitHub account.
 
 ## Credits
     https://flask.palletsprojects.com/en/1.1.x/patterns/viewdecorators/
@@ -209,3 +240,6 @@ As a film lover I wanted to create a film review website which is controlled by 
     https://www.youtube.com/watch?v=Lnt6JqtzM7I pretty printed
 
 ## Ackowledgments
+
+* My Mentor for helpful feedback throughout the project and working calls around my current work schedule.
+* My partner for helping me test the project on her devices.
