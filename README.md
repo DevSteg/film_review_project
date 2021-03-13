@@ -355,6 +355,9 @@ Wireframes for the project can be found [here](static/readme_items/wireframes/fi
 
     #### Redirect profile bug
     While testing the profile functionality I realised that the profile did not update the information on the page straight away, As I don't see this a major bug I have chosen to redirect the user to the homepage for now and to update the bug at a later date.
+    
+    #### App Routing Issue in Search bar
+    When testing the search bar, I realised I had created an app routing error in the function, with this fixed the serach bar worked as expected.
 
 - ### Known Bugs
 
