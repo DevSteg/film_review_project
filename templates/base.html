@@ -10,8 +10,9 @@
     <title>Film Review</title>
 </head>
 <body>
-    <header>
-        
+    <!-- Header for Website -->
+    <header> 
+        <!-- Navbar  -->
         <nav class="transparent">
             <div class="nav-wrapper">
                 <a href="{{ url_for('index') }}" class="brand-logo left">Film Review</a>
@@ -30,7 +31,7 @@
                 </ul>
             </div>
         </nav>
-
+        <!-- Mobile Navbar -->
         <ul class="sidenav" id="mobile-demo">
             <li><a href="{{ url_for('index') }}">Home</a></li>
             <li><a href="{{ url_for('films') }}">Films</a></li>

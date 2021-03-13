@@ -4,9 +4,11 @@
     <span>Sign Up</span>
 {% endblock %}
 {% block content %}
+<!-- Register Form -->
     <div class="row">
         <form action="{{ url_for('register') }}" method="POST" class="col s12 m8 offset-m2">
             <div class="card-panel">
+                <!-- Username -->
                 <div class="row">
                     <div class="input-field col s12">
                         <label for="username">Username <span class="req-star">*</span></label>
@@ -14,21 +16,25 @@
                         <p class="user-tag">Username cannot be changed, choose wisely</p>
                     </div>
                 </div>
+                <!-- Email -->
                 <div class="row">
                     <div class="input-field col s12">
                         <label for="email">Email <span class="req-star">*</span></label>
                         <input type="email" id="email" name="email" required>
                     </div>
                 </div>
+                <!-- Password -->
                 <div class="row">
                     <div class="input-field col s12">
                         <label for="password">Password <span class="req-star">*</span></label>
                         <input type="password" id="password" name="password" minlength="5" required>
                     </div>
                 </div>
+                <!-- Sign Up Button -->
                 <div class="row">
                     <button type="submit" class="btn-large col s12 submit-btn hoverable">Sign Up <i class="fas fa-user-plus"></i></button>
                 </div>
+                <!-- Login Button -->
                 <div class="row center-align">
                     <p>Already have an account?<a href="{{ url_for('login')}}" class="log-reg-btn"> Login here</a></p>
                 </div>

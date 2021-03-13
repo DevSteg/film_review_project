@@ -4,21 +4,26 @@
     <span>Edit Review</span>
 {% endblock %}
 {% block content %}
+    <!-- Film Image -->
     <div class="row">
         <div class="col s12 l6">
             <img src="{{ film.film_img }}" alt="Cover image for {{ film.film_title.capitalize() }}" class="film-img-lrg">
         </div>
         <div class="card col s12 l6 cont-align">
             <div class="card-content col s12">
+                <!-- Film Title -->
                 <h3 class="center-align review-title">{{ film.film_title.title() }}</h3>
+                <!-- Edit Review Form -->
                 <form action="/edit_review/{{ review._id }}" method="POST">
                     <div class="row">
                         <label for="edit_review">Edit Review <span class="req-star">*</span></label>
                         <textarea type="text" id="edit_review" name="edit_review" rows="10" cols="12" required>{{ review.review.capitalize() }}</textarea>
                     </div>
+                    <!-- Edit Review Button -->
                     <div class="row">
                         <button type="submit" class="btn-large col s12 submit-btn hoverable">Update Review <i class="fas fa-edit"></i></button>
                     </div>
+                    <!-- Delete Review -->
                     <div class="row">
                         <a href="/delete_review/{{ review._id }}" class="delete-btn"><i class="fas fa-trash-alt"></i></a>
                     </div>

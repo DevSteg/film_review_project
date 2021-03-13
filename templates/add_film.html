@@ -4,39 +4,46 @@
     <span>Add Film</span>
 {% endblock %}
 {% block content %}
+    <!-- Add Film Form  -->
     <div class="row">
         <form action="{{ url_for('add_film') }}" method="POST" class="col s12 m8 offset-m2">
             <div class="card-panel">
+                <!-- Film image URL  -->
                 <div class="row">
                     <div class="input-field col s12">
                         <input type="url" id="film_img" name="film_img" placeholder="" required>
                         <label for="film_img">Film Cover Image URL: <span class="req-star">*</span></label>
                     </div>
                 </div>
+                <!-- Film Title  -->
                 <div class="row">
                     <div class="input-field col s12">
                         <input type="text" id="film_title" name="film_title" required>
                         <label for="film_title">Title: <span class="req-star">*</span></label>
                     </div>
                 </div>
+                <!-- Film Genre  -->
                 <div class="row">
                     <div class="input-field col s12">
                         <input type="text" id="genre" name="genre" required>
                         <label for="genre">Genre: <span class="req-star">*</span></label>
                     </div>
                 </div>
+                <!-- Film Release Date  -->
                 <div class="row">
                     <div class="input-field col s12">
                         <input type="text" class="datepicker" id="release_date" name="release_date" required>
                         <label for="release_date">Release Date: <span class="req-star">*</span></label>
                     </div>
                 </div>
+                <!-- Film Description  -->
                 <div class="row">
                     <div class="input-field col s12">
                         <label for="desc">Film Description: <span class="req-star">*</span></label>
                         <textarea type="text" id="desc" name="desc" row="6" cols="12" required></textarea>
                     </div>
                 </div>
+                <!-- Add Film Button -->
                 <div class="row">
                     <button type="submit" class="btn-large col s12 hoverable submit-btn">Add Film <i class="fas fa-edit"></i></button>
                 </div>

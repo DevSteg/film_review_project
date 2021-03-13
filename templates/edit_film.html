@@ -3,40 +3,47 @@
 {% block title %}
     <span>Edit Film</span>
 {% endblock %}
-{% block content %}
+{% block content %
+    <!-- Edit Film Form -->
     <div class="row">
         <form action="{{ url_for('edit_film', film_id=films._id) }}" method="POST" class="col s6 m8 offset-m2">
             <div class="card-panel">
+                <!-- Edit Film URL -->
                 <div class="row">
                     <div class="input-field col s12">
                         <input type="url" id="film_img" name="film_img" value="{{ films.film_img }}" required>
                         <label for="film_img">Film Cover Image URL: <span class="req-star">*</span></label>
                     </div>
                 </div>
+                <!-- Edit Film Title -->
                 <div class="row">
                     <div class="input-field col s12">
                         <input type="text" id="film_title" name="film_title" value="{{ films.film_title.title() }}" required>
                         <label for="film_title">Title: <span class="req-star">*</span></label>
                     </div>
                 </div>
+                <!-- Edit Film Genre -->
                 <div class="row">
                     <div class="input-field col s12">
                         <input type="text" id="genre" name="genre" value="{{ films.genre.capitalize() }}" required>
                         <label for="genre">Genre: <span class="req-star">*</span></label>
                     </div>
                 </div>
+                <!-- Edit Film Release Date -->
                 <div class="row">
                     <div class="input-field col s12">
                         <input type="text" class="datepicker" id="release_date" name="release_date" value="{{ films.release_date }}" required>
                         <label for="release_date">Release Date: <span class="req-star">*</span></label>
                     </div>
                 </div>
+                <!-- Edit Film Description -->
                 <div class="row">
                     <div class="input-field col s12">
                         <label for="desc">Film Description: <span class="req-star">*</span></label>
                         <textarea type="text" id="desc" name="desc" row="6" cols="12" required>{{ films.desc.capitalize() }}</textarea>
                     </div>
                 </div>
+                <!-- Edit Film Submit Button -->
                 <div class="row">
                     <button type="submit" class="btn-large col s12 submit-btn">Update Film</button>
                 </div>
