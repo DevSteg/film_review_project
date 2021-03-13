@@ -187,7 +187,41 @@ Wireframes for the project can be found [here](static/readme_items/wireframes/fi
             * If I uploaded the review or the film then a delete button will show up on both the film and the review.
         5. As a frequent user, I want to be able to view and edit my info to keep it up to date.
             * Each user has their own profile page where they can updated their email and password, currently Usernames can not be changed due to security.
+
+- ### Site owner goals testing
+    1. Create revenue from afilliate links to buy/stream films.
+        * The Watch now curerntly takes the user to a fake tag, This is for demonstration purposes only and would be updated to an official Amazon affiliate link in the future.
+
 - ### Further Testing
+- #### Nav-bar Testing
+    - When a user is not legged in
+        * Testing the Film Review logo, When clicking on the film review logo it should take the user to the home page.
+        The expected outcome was acheived.
+        * Testing the Home link, When clicking on the Home it should take the user to the home page.
+        The expected outcome was acheived.
+        * Testing the Films link, When clicking on the Films link it should take the user to the films page.
+        The expected outcome was acheived.
+        * Testing the Login link, When clicking on the Login link it should take the user to the login page.
+        The expected outcome was acheived.
+        * Testing the Signup link, When clicking on the Signup link it should take the user to the register page.
+        The expected outcome was acheived.
+    - When a user is logged in
+        * Testing the Home link, When clicking on the Home it should take the user to the home page.
+        The expected outcome was acheived.
+        * Testing the Films link, When clicking on the Films link it should take the user to the films page.
+        The expected outcome was acheived.
+        * Testing the Profile link, When clicking on the Profile link it should take the user to the users profile page.
+        The expected outcome was acheived.
+        * Testing the Add Film link, When clicking on the Add Film link it should take the user to the Add Film page.
+        The expected outcome was acheived.
+        * Testing the Logout link, When clicking on the Logout link it should log the user out and then take the user to the login page.
+        The expected outcome was acheived.
+
+- #### Search bar Testing
+    * When enter a unknown search term the films page should display a message telling the user no film was found would they like to add it in.
+    The expected outcome is acheived.
+    * When entering the name of a film or genre, the films page should find all films relating to the search and display them to the user.
+    The expected is acheived
 
 - #### Home Page Testing
     * Testing the resgister button, When clicking on the register button its expected outcome is to take the user to the register page to register account.
@@ -198,7 +232,7 @@ Wireframes for the project can be found [here](static/readme_items/wireframes/fi
     The expected outcome is acheived.
     * Testing the Add Review button in the film card, when clicking the add review button it should do one of two things 
         - If a user is logged in take the user to add review page for that specific film. 
-        The expected out for this is achevied.
+        The expected outcome for this is achevied.
         - If a user is not logged in then take the user to the login page to login.
         The expected outcome is acheieved.
     * Testing the All Films button, when clicking the all films button the expected outcome is to take the user to the films page where it lists the films in the database.
@@ -209,10 +243,28 @@ Wireframes for the project can be found [here](static/readme_items/wireframes/fi
         - If a user is not logged in then take the user to the login page to login.
         The expected outcome is acheieved.
 
+- #### Films page Testing
+    * Testing the "lets us pick your next watch" button, When pressing this button the expected outcome is for the films page to display one randomly selected film form the db.
+    The expected outcome is acheieved.
+    * Testing the film cards, when clicking the film image the expected outcome is to take the user to that specific movie page for read reviews and find out more information on the film.
+    The expected outcome is acheived.
+    * Testing the Add Review button in the film card, when clicking the add review button it should do one of two things 
+        - If a user is logged in take the user to add review page for that specific film. 
+        The expected outcome for this is achevied.
+        - If a user is not logged in then take the user to the login page to login.
+        The expected outcome is acheieved.
+    * Testing the pagination buttons.
+        - When clicking the previous page button the expected outcome is for the films page to display the previous set of 9 films on the page.
+        The expected outcome for this is acheived.
+        - When clicking the next page button the expected outcome is for the films page to display the next set of 9 films on the page.
+        The expected outcome for this is acheived.
+
+    
+
 - #### Edit Profile Testing
     * Testing editing the username. I chanegd the user name only on the profile page and I clicked the update profile button. 
     This worked as expected but this was when I realised that using the profile page to change the user username means they could duplicate a username that already exists in the database. 
-
+    
 - ### Device/Browser Testing
     + Chrome
     + Firefox
