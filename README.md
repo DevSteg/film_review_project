@@ -1,8 +1,8 @@
 <h1 align="center">Film Review Project</h1>
 
-[View Live Project Here]()
+[View Live Project Here](https://film-review-project.herokuapp.com/index)
 
-![Snapshot of Project]()
+![Snapshot of Project](static/readme_items/imgs/film_review_reponsive.png)
 
 Welcome to my film review project built for the Code Institute Data Centric Development module. The scope of the module was to "Build a MongoDB-backed Flask project for a web application that allows users to store and manipulate data records about a particular domain.".
 As a film lover I wanted to create a film review website which is controlled by the users of the site, adding films they want in the database aswell as their own reviews. The goal is to eventually build a community of film fans.
@@ -20,8 +20,8 @@ As a film lover I wanted to create a film review website which is controlled by 
     * #### Returning/Frequent Users (Film Fans)
         1. As a frequent user, I want to quickly sign into my own account.
         2. As a frequent user, I want to be able to add/edit my own review on a film of my choice.
-        3. As a frequent user, I want to be able to add/edit a film, if I can not find it.
-        4. As a frequent user, I want to be able to update my profile when I need too.
+        3. As a frequent user, I want to be able to add a film, if I can not find it.
+        4. As a frequent user, I want to be able to edit or delete a film I have added if required.
         5. As a frequent user, I want to be able to view and edit my info to keep it up to date.
 
 - ### Site Owner Goals
@@ -60,11 +60,14 @@ As a film lover I wanted to create a film review website which is controlled by 
         Materialize cards are used throughout the project to make sure the website content stands out from the background image.
     * ### Buttons
         All buttons and cards that are clickable are using the class hoverable from materialize to show to the user that they are clickable.
+    * ### CTA Login/Sign up buttons
+        The Sign up and login buttons on index.html will not show if the user is already logged in.
+    * ### Edit film Button
+        The edit film button on movie.html will only show on the page when the user that added the film is logged in.
 
 - ### Database
-    [MongoDB](https://www.mongodb.com/) was used for the database. The database consists of three collections, The entries within the databse will be upload
-    * The database consists of 3 collections:
-        1. Users
+    [MongoDB](https://www.mongodb.com/) was used for the database. The database consists of three collections. The 3 collections are:
+        1. Users        
         2. Films
         3. Reviews
     * Users has 4 keys:
@@ -90,7 +93,7 @@ As a film lover I wanted to create a film review website which is controlled by 
     ![Tables Overview](static/readme_items/db_schema/db_schema.png)
 
 ## Wireframes
-    Wireframes for the project can be found [here]()
+    Wireframes for the project can be found [here](static/readme_items/wireframes/film_review_wireframes.pdf)
 
 ## Features
     * Responsive Design, Available on a range of devices.
@@ -140,17 +143,60 @@ As a film lover I wanted to create a film review website which is controlled by 
         * Image for the header background has been pulled from Unsplash.
     10. [Freepik.com](https://www.freepik.com/)
         * The vector image for the body background has been pulled from Freepik.
+    11. [AmIResponsive.is](http://ami.responsivedesign.is/)
+        * The Am I responsive website was used to capture the snapshot of the project. 
 
 ## Testing
 
+-### Edit Profile Testing
+    * Testing editting the username. I chanegd the user name only on the profile page and I clicked the update profile button. 
+    This worked as expected but this was when I realised that using the profile page to change the user username means they could duplicate a username that already exists in the database. 
+        
 ## Bugs
 - ### Bugs Fixed
-    While testing editing a film I discovered when trying to redirect to the movie page, the newly edited film dictionary had no created_by entry, This was human error and was fixed by adding the created_by entry to the edit_film function in app.py.
+
+    #### Created_by missing bug
+    While testing editing a film I discovered when trying to redirect to the movie page, the newly edited film dictionary had no created_by entry, 
+    This was human error and was fixed by adding the created_by entry to the edit_film function in app.py.
+
+    #### Duplicate Username bug
+    While testing editing the user profile, I realised that changing the users username this way means they can duplicate a username that already exists in the database. 
+    I have fixed this by removing the option to edit the users username, I chose to fix the bug this way due to time constraints.
 
 - ### Known Bugs
+    #### Flashed messages
+    While testing the add film and review buttons, I discovered that the flash message to tell the user they need to login to add film or add review, does not show up. 
+    Due to time restraints I was unable to fix this bug at build stage
 
 ## Deployment
     
+    ### Remote Deployment
+        * Go to your Github repository and open it using GitPod
+        * Create the requirements.txt file with the dependencies for Heroku in by runnig the command "pip3 freeze --local > requirements.txt" in the gitpod terminal
+        * Create the procfile for Heroku by running the command "echo web: python app.py > Procfile" in the gitpod terrminal
+        * Check the Procfile, and remove any previous blank lines above web: python app.py
+        * Commit and push the requirements.txt and Procfile to Github
+        * Log in to Heroku and select Create New App
+        * Using the App name input field give the project a name that has not been used before
+        * Select the region most suitable to your location
+        * Click Create App
+        * Next connect the app to the Github repository by clicking on the Deployment Method section and then clicking the Github icon
+        * Add your Github profile into the section called connect to Github.
+        * Add you repository into the connect to Github section where your profile is displayed
+        * Click on the Search button, when it finds the correct repository click the Connect button
+        * Click on the settings tab at the top of the page, and select Reveal Config Var
+        * Add the variables for IP, PORT, SECRET_KEY, MONGO_URI and MONGODB_NAME 
+        * Then select Enable Automatic Deployment to make sure the website is always up to date with the Github repository
+        * Select the master branch under Branch Selected
+        * Click on the Deploy Branch and wait for the app to build
+        * Once the app has built, click View to launch the app
+    
+    ### Forking the GitHub Repository
+        - Fork the project using the following steps
+            * Log in to GitHub and locate the [GitHub Repository](https://github.com/DevSteg/film_review_project)
+            * At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+            * You should now have a copy of the original repository in your GitHub account.
+
 ## Credits
     https://flask.palletsprojects.com/en/1.1.x/patterns/viewdecorators/
 
@@ -159,5 +205,7 @@ As a film lover I wanted to create a film review website which is controlled by 
     <span>Photo by <a href="https://unsplash.com/@felixmooneeram?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Felix Mooneeram</a> on <a href="https://unsplash.com/s/photos/movie?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 
     <a href='https://www.freepik.com/vectors/camera'>Camera vector created by macrovector - www.freepik.com</a>
+
+    https://www.youtube.com/watch?v=Lnt6JqtzM7I pretty printed
 
 ## Ackowledgments
