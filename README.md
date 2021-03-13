@@ -154,14 +154,14 @@ Wireframes for the project can be found [here](static/readme_items/wireframes/fi
 ## Testing
 
 - ### W3C Testing
-    *[Index](static/readme_items/testing/index_testing.png)
-    *[Films](static/readme_items/testing/films_testing.png)
-    *[Add Film](static/readme_items/testing/add_film_testing.png)
-    *[Movie](static/readme_items/testing/movie_testing.png)
-    *[Login](static/readme_items/testing/login_testing.png)
-    *[Register](static/readme_items/testing/register_testing.png)
-    *[Review](static/readme_items/testing/review_testing.png)
-    *[CSS](static/readme_items/testing/css_testing.png)
+    [Index](static/readme_items/testing/index_testing.png)
+    [Films](static/readme_items/testing/films_testing.png)
+    [Add Film](static/readme_items/testing/add_film_testing.png)
+    [Movie](static/readme_items/testing/movie_testing.png)
+    [Login](static/readme_items/testing/login_testing.png)
+    [Register](static/readme_items/testing/register_testing.png)
+    [Review](static/readme_items/testing/review_testing.png)
+    [CSS](static/readme_items/testing/css_testing.png)
 
 - ### Testing User Stories
 
