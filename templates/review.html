@@ -4,18 +4,22 @@
     <span>Add Review</span>
 {% endblock %}
 {% block content %}
+    <!-- Film Image -->
     <div class="row">
         <div class="col s12 l6">
             <img src="{{ film.film_img }}" class="film-img-lrg" alt="Cover image for {{ film.film_title.capitalize() }}">
         </div>
         <div class="card col s12 l6 cont-align">
             <div class="card-content col s12">
+                <!-- Film Title -->
                 <h3 class="center-align review-title">{{ film.film_title.title() }}</h3>
+                <!-- Add Review Form -->
                 <form action="{{ url_for('review', film_id=film._id) }}" method="POST" class="review-content">
                     <div class="row">
                         <label for="review">Add Review <span class="req-star">*</span></label>
                         <textarea type="text" id="review" name="review" required></textarea>
                     </div>
+                    <!-- Add Review Button -->
                     <div class="row">
                         <button type="submit" class="btn-large col s12 submit-btn hoverable">Add Review <i class="fas fa-plus-square"></i></button>
                     </div>
