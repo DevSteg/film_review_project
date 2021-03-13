@@ -355,7 +355,7 @@ Wireframes for the project can be found [here](static/readme_items/wireframes/fi
 
 ## Deployment
     
-- ### Remote Deployment
+- ### Heroku Deployment
     * Go to your Github repository and open it using GitPod
     * Create the requirements.txt file with the dependencies for Heroku in by runnig the command "pip3 freeze --local > requirements.txt" in the gitpod terminal
     * Create the procfile for Heroku by running the command "echo web: python app.py > Procfile" in the gitpod terrminal
@@ -375,7 +375,31 @@ Wireframes for the project can be found [here](static/readme_items/wireframes/fi
     * Select the master branch under Branch Selected
     * Click on the Deploy Branch and wait for the app to build
     * Once the app has built, click View to launch the app
-    
+
+- ### Making a Local Clone
+
+    1. Log in to GitHub and locate the [GitHub Repository](https://github.com/DevSteg/film_review_project)
+    2. Under the repository name, click "Clone or download".
+    3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+    4. Open Git Bash
+    5. Change the current working directory to the location where you want the cloned directory to be made.
+    6. Type `git clone`, and then paste the URL you copied in Step 3.
+
+    ```
+    $ git clone https://github.com/DevSteg/film_review_project
+    ```
+
+    7. Press Enter. Your local clone will be created.
+
+    ```
+    $ git clone https://github.com/DevSteg/film_review_project
+    > Cloning into `CI-Clone`...
+    > remote: Counting objects: 10, done.
+    > remote: Compressing objects: 100% (8/8), done.
+    > remove: Total 10 (delta 1), reused 10 (delta 1)
+    > Unpacking objects: 100% (10/10), done.
+    ```
+
 - ### Forking the GitHub Repository
     - Fork the project using the following steps
         * Log in to GitHub and locate the [GitHub Repository](https://github.com/DevSteg/film_review_project)
@@ -383,16 +407,17 @@ Wireframes for the project can be found [here](static/readme_items/wireframes/fi
         * You should now have a copy of the original repository in your GitHub account.
 
 ## Credits
-    https://flask.palletsprojects.com/en/1.1.x/patterns/viewdecorators/
-
-    https://stackoverflow.com/questions/2824157/random-record-from-mongodb
-
-    <span>Photo by <a href="https://unsplash.com/@felixmooneeram?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Felix Mooneeram</a> on <a href="https://unsplash.com/s/photos/movie?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
-
-    <a href='https://www.freepik.com/vectors/camera'>Camera vector created by macrovector - www.freepik.com</a>
-
-    https://www.youtube.com/watch?v=Lnt6JqtzM7I pretty printed
-
+- [Flask Documentaion](https://flask.palletsprojects.com/en/1.1.x/) 
+    * The login-required decorater was learned using the flask documentaion and can be found [here](https://flask.palletsprojects.com/en/1.1.x/patterns/viewdecorators/)
+- [Stack Overflow](https://stackoverflow.com/)
+    * Stack overflow helped me learn about accessing random records from the database, the page used can be found [here](https://stackoverflow.com/questions/2824157/random-record-from-mongodb)
+- [Felix Mooneeram](https://unsplash.com/@felixmooneeram?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
+    * The header image was downloaded from Felix's [Unsplash](https://unsplash.com/) account, The link can be found [here](https://unsplash.com/photos/evlkOfkQ5rE)
+- [MacroVector](https://www.freepik.com/macrovector)
+    * The Vector image for the background image was downloaded from MacroVector's [Freepik.com](https://www.freepik.com/) account, The link can be found [here](https://www.freepik.com/free-vector/cinema-monochrome-elements-set_9464252.htm#page=2&query=Camera&position=1)
+- [Pretty Printed Youtube](https://www.youtube.com/watch?v=Lnt6JqtzM7I)
+    * This turtorial helped me create the pagination for the films page. Link for the video can be found [here](https://www.youtube.com/watch?v=Lnt6JqtzM7I)
+    
 ## Ackowledgments
 
 * My Mentor for helpful feedback throughout the project and working calls around my current work schedule.
