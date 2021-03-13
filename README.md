@@ -140,7 +140,7 @@ Wireframes for the project can be found [here](static/readme_items/wireframes/fi
     7. [Heruko](https://heroku.com)
         * The final project has been deployed using the Heruko platform. 
     7. [Balsamiq:](https://balsamiq.com/)
-        * Balsamiq was used to create the [wireframes]() during the design process.
+        * Balsamiq was used to create the [wireframes](static/readme_items/wireframes/film_review_wireframes.pdf) during the design process.
     8. [Favicon.io](https://favicon.io/favicon-converter/)
         * Favicon.io was used to convert the site logo to a favicon for the website. The links for the favicon were also copied from favicon.io.
     9. [Unsplash.com](https://unsplash.com/)
@@ -151,6 +151,16 @@ Wireframes for the project can be found [here](static/readme_items/wireframes/fi
         * The Am I responsive website was used to capture the snapshot of the project. 
 
 ## Testing
+
+- ### W3C Testing
+    *[Index](static/readme_items/testing/index_testing.png)
+    *[Films](static/readme_items/testing/films_testing.png)
+    *[Add Film](static/readme_items/testing/add_film_testing.png)
+    *[Movie](static/readme_items/testing/movie_testing.png)
+    *[Login](static/readme_items/testing/login_testing.png)
+    *[Register](static/readme_items/testing/register_testing.png)
+    *[Review](static/readme_items/testing/review_testing.png)
+    *[CSS](static/readme_items/testing/css_testing.png)
 
 - ### Testing User Stories
 
@@ -417,7 +427,7 @@ Wireframes for the project can be found [here](static/readme_items/wireframes/fi
     * The Vector image for the background image was downloaded from MacroVector's [Freepik.com](https://www.freepik.com/) account, The link can be found [here](https://www.freepik.com/free-vector/cinema-monochrome-elements-set_9464252.htm#page=2&query=Camera&position=1)
 - [Pretty Printed Youtube](https://www.youtube.com/watch?v=Lnt6JqtzM7I)
     * This turtorial helped me create the pagination for the films page. Link for the video can be found [here](https://www.youtube.com/watch?v=Lnt6JqtzM7I)
-    
+
 ## Ackowledgments
 
 * My Mentor for helpful feedback throughout the project and working calls around my current work schedule.
